@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import Button from '@/components/button/button'
 import {motion} from "framer-motion"
 import Pin from '../pin/pin'
@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import Getdimensions from '../getdimensions/getdimensions'
 import gsap from 'gsap'
+import bezier from 'bezier-easing'
 
 const Hero = () => {
 
@@ -177,24 +178,21 @@ const Poster = () => {
 }
 
 export const Reveal = ({children, x}) => {
+
+    const dimensions = Getdimensions();
+
+    const ese = bezier(0.83, 0, 0.17, 1)
+
+    useGSAP(()=>{
+        if(dimensions.w>=576){
+            gsap.fromTo(".reveal-text",{x:x}, {x:0, delay:1.2, duration:1.2, ease:ese})
+        }
+    },[dimensions])
     
     return (
-        <motion.div 
-        variants={{
-            init:{
-                x:window.innerWidth>=576?x:0
-            },
-            anim:{
-                x:0,
-                transition:{delay: 1.2, duration: 1.2, ease:[0.83, 0, 0.17, 1]}
-            }
-         }}
-         initial='init'
-         animate='anim'
-        className="reveal-text">
+        <div className="reveal-text">
             {children}
-        </motion.div>
-        
+        </div>
     )
 }
 

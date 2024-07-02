@@ -1,7 +1,8 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {motion} from "framer-motion"
 import Svg from '../svg/svg'
+import Getdimensions from '../getdimensions/getdimensions'
 
 let slides = [
     {
@@ -36,16 +37,22 @@ let slides = [
     }
 ]
 
-let constraints = () => {
-    if(window.innerWidth<=1024 && window.innerHeight>=1000){
-        return -window.innerWidth*1.5
-    }else if(window.innerWidth<=576 && window.innerHeight<1000){
-        return -window.innerWidth*4
-    }
-    return -window.innerWidth
-}
-
 const Process = () => {
+
+  const dimensions = Getdimensions();
+
+  const [constraints,setconstraints] = useState(0)
+
+  useEffect(()=>{
+    if(dimensions.w<=1024 && dimensions.h>=1000){
+        setconstraints(-dimensions.w*1.5)
+    }else if(dimensions.w<=576 && dimensions.h<1000){
+        setconstraints(-dimensions.w*4)
+    }else{
+        setconstraints(-dimensions.w)
+    }
+  },[dimensions])
+
   return (
     <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[12vh] mob:py-[10vh] overflow-hidden bg-black flex justify-center'>
         <div className="process-inner w-[93%] flex flex-col gap-[8vh] tab:gap-[5vh]">
@@ -57,7 +64,7 @@ const Process = () => {
             <div className="slider-wrapper w-full">
                 <motion.div
                  drag="x"
-                 dragConstraints={{left:constraints(), right:0}}
+                 dragConstraints={{left:constraints, right:0}}
                  initial={"init"}
                  whileTap={"tap"}
                  variants={{

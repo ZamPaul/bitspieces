@@ -36,6 +36,7 @@ const History = () => {
             // markers:true,
             pin:img.current,
             pinnedContainer: img.current,
+            
             scrub:true
         })
     }
