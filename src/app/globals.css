@@ -2,32 +2,294 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+    --grey:#ebecf0;
+    --offwhite: #F1F1F1;
+    /* --black:#1c1d20; */
+    --black:#121212;
+    --yellow:#e0fd60;
+    --bor: #808080;
+    --sli:#242426;
+    --purp:#b8a3f2;
+    /* --green:#d1e3d3; */
+    --blue: #d1e3d3;
+    --pink:#e5d4e6;
+    --green:#d2e5d8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*{
+    color: #fff;
+    font-family: nue;
+    letter-spacing: 0.2px;
+    /* background-color: #121212; */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h2,p,a,Link,label{
+    font-size: 17px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+*::selection{
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+h1{
+    font-size: 4.5vw;
+}
+
+@font-face {
+    font-family: mon;
+    src: url(../../public/fonts/MonumentExtended-Regular.woff2);
+}
+
+@font-face {
+    font-family: fg;
+    src: url(../../public/fonts/FoundersGrotesk-Semibold.woff2);
+}
+
+@font-face {
+    font-family: nue;
+    src: url(../../public/fonts/NeueMontreal-Regular.woff2);
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--black);
+}
+
+.link, .active-link, .email-link, .phone-link, .para-link{
+    position: relative;
+}
+
+.link::after, .email-link::after, .phone-link::after, .active-link::after, .para-link::after{
+    position: absolute;
+    content: "";
+    background-color: var(--black);
+    border-radius: 50px;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.menu-overlay{
+    backdrop-filter: blur(0px) brightness(100%);
+}
+
+.active-link::after, .para-link::after{
+    width: 100%;
+}
+
+.para-link::after{
+    bottom: -2px;
+}
+
+.link:hover::after, .email-link:hover::after, .phone-link:hover::after, .active-link:hover::after{
+    width: 100%;
+    left: 0;
+    transition: 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.para-link:hover::after{
+    width: 0%;
+    left: 0;
+    transition: 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@media screen and (max-width:400px) {
+    .slide-inner{
+        padding: 40px 40px;
+    }
+    .slide-inner p{
+        font-size: 24px;
+    }
+}
+
+@media (min-width:1500px) {
+    .hero-content .content-inner .wrap{
+        height: 7.5em;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 5.8em;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 4.7em;
+    }
+    .graphic-text{
+        font-size: 1.4vw;
+    }
+    .service-hero-wrap .wrap{
+        height: 6em;
+    }
+}
+
+@media (min-width:1600px) {
+    .hero-content .content-inner .wrap{
+        height: 7.8em;
+    }
+    .menu-wrapper{
+        padding: 33px 33px;
+        padding-top: 53px;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 6em;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 4.9em;
+    }
+    .service-hero-wrap .wrap{
+        height: 6.4em;
+    }
+}
+
+@media (min-width:1700px) {
+    .hero-content .content-inner .wrap{
+        height: 8.2em;
+    }
+    .menu-wrapper{
+        padding: 36px 36px;
+        padding-top: 56px;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 6.3em;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 5.1em;
+    }
+    .service-hero-wrap .wrap{
+        height: 6.8em;
+    }
+}
+
+@media (min-width:1800px) {
+    .hero-content .content-inner .wrap{
+        height: 8.6em;
+    }
+    .menu-wrapper{
+        padding: 39px 39px;
+        padding-top: 59px;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 6.6em;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 5.2em;
+    }
+    .service-hero-wrap .wrap{
+        height: 7.2em;
+    }
+}
+
+@media (min-width:1900px) {
+    .hero-content .content-inner .wrap{
+        height: 8.9em;
+    }
+    .menu-wrapper{
+        padding: 42px 42px;
+        padding-top: 62px;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 6.9em;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 5.5em;
+    }
+    .service-hero-wrap .wrap{
+        height: 7.4em;
+    }
+}
+
+@media (min-height:1000px) and (max-width:1010px) {
+    .reach-us-inner{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3vh;
+    }
+    .reach-us-inner .reach-us-left{
+        width: 100%;
+    }
+    .reach-us-inner .reach-us-left p{
+        width: 100%;
+    }
+    .reach-us-inner .reach-us-right{
+        width: 100%;
+        justify-content: start;
+        gap: 8vw;
+    }
+    .policy-wrap{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .policy-wrap .policy-left, .policy-wrap .policy-right{
+        width: 100%;
+    }
+}
+
+@media (min-height:600px) and (max-height:800px) and (max-width:1200px) {
+    .hero-content .wrap{
+        /* background-color: #b8a3f22a; */
+        height: 8.2vw;
+    }
+    .hero-content .wrap h1{
+        font-size: 6.5vw;
+    }
+    .hero-content .content-inner .wrap .services p{
+        font-size: 1.4vw;
+    }
+    .service-hero-wrap .wrap{
+        height: 7.3vw;
+    }
+    .contact-intro-inner .wrap:nth-child(1){
+        height: 6.3vw;
+    }
+    .contact-intro-inner .wrap:nth-child(2){
+        height: 6.3vw;
+    }
+    .contact-graphic{
+        width: 18.5vw;
+    }
+    .reach-us-right .email-link, .reach-us-right .phone-link{
+        font-size: 13px;
+    }
+    .footer-right{
+        width: 48%;
+        gap: 3vw;
+    }
+    .footer-right p{
+        font-size: 12px;
+    }
+    .footer-right a{
+        font-size: 17px;
+    }
+    .footer-left{
+        gap: 5vw;
+    }
+    .footer-cta-button h2{
+        font-size: 15px;
+    }
+    .slide{
+        height: 35vw;
+        width: 35vw;
+    }
+    .slide .slide-inner{
+        gap: 30px;
+        padding: 40px 40px;
+    }
+    .slide .slide-inner .description{
+        padding-right: 10px;
+    }
+    .slide .slide-inner .phase{
+        bottom: 40px;
+    }
+    .menu-wrapper{
+        width: 30vw;
+        height: 33vw;
+    }
 }
