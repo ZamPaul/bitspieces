@@ -26,7 +26,7 @@ const equipments = [
         count:"189",
         backColor:"#d1e3d3",
         p:"Create a fun and safe environment for the little ones with our range of vibrant and child-friendly furniture, perfect for any kids' event.",
-         src:"./rentals/heroposter2.webp",
+         src:"./assets/heroposter2.webp",
     },
     {
         item:"Sport & Game",
@@ -59,7 +59,7 @@ const equipments = [
     {
         item:"Music Instruments",
         count:"123",
-        backColor:"#c7b9ee",
+        backColor:"#cac1e2",
         p:"Elevate your event’s entertainment with our selection of high-quality music instruments, catering to professional musicians and live performances.",
         src:"./rentals/music.webp"
     },
