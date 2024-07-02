@@ -13,8 +13,8 @@ const Contact = () => {
     <ContactForm/>
     <Reach_Us/>
     <div className='bg-white'>
-      {/* <Marquee/> */}
-      {/* <FooterTest/> */}
+      <Marquee/>
+      <FooterTest/>
     </div>
     </>
   )

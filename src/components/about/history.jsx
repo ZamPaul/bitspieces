@@ -40,7 +40,7 @@ const History = () => {
         })
     }
    
-  })
+  },[dimensions])
 
   return (
     <div className="about-info z-[30] w-full pt-[35vh] tab:pt-[30vh] pb-[15vh] tab:pb-[10vh] mob:pb-[10vh] text-black flex flex-col justify-start items-center bg-white">

@@ -161,7 +161,7 @@ const Poster = () => {
                 invalidateOnRefresh: true
             })
         }
-    })
+    },[dimensions])
 
     return (
         <div className="poster relative bg-black w-[93%] mt-[2vw] tab:mt-[6vh] mob:mt-[5vh] pt-[6vh] border-t-[1px] border-t-[var(--bor)] flex flex-col gap-[6vh]">
@@ -177,6 +177,7 @@ const Poster = () => {
 }
 
 export const Reveal = ({children, x}) => {
+    
     return (
         <motion.div 
         variants={{

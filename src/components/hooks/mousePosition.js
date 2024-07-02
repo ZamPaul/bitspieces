@@ -8,10 +8,6 @@ const MousePosition = () => {
   
   const [mouse, setMouse] = useState({x:0, y:0})
 
-  // const mouse = {
-  //   x: useMotionValue(0),
-  //   y: useMotionValue(0)
-  // }
 
   const mousemove = (e) => {
     const {clientX, clientY} = e

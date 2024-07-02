@@ -9,8 +9,8 @@ const Page = () => {
     <>
     <WorkGallery service={"advertisement"}/>
     <div className='bg-white'>
-      {/* <Marquee/> */}
-      {/* <FooterTest/> */}
+      <Marquee/>
+      <FooterTest/>
     </div>
     </>
   )

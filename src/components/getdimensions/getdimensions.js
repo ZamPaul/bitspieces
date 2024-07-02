@@ -5,13 +5,14 @@ import React, { useEffect, useState } from 'react'
 
 const Getdimensions = () => {
 
-  const [dimensions, setDimensions] = useState({w:window.innerWidth, h:window.innerHeight})
+  const [dimensions, setDimensions] = useState({w:0, h:0})
 
   const setdimensions = () => {
     setDimensions({w:window.innerWidth, h:window.innerHeight})
   }
 
   useEffect(()=>{
+    setdimensions()
     window.addEventListener("resize",setdimensions)
     return () => {
       window.removeEventListener("resize",setdimensions)
