@@ -46,7 +46,7 @@ const Hero = () => {
                                 Art department, advertising, Film Making, Event Management, rentals and much more.
                             </p>
                             <div className="hidden mob:block mt-[3vh]">
-                                <Button value={"Let's talk"}/>
+                                <Button value={"Let's talk"} href={"/contact"}/>
                             </div>
                     </div>
                 </div>
