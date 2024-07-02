@@ -63,10 +63,10 @@ const Marquee = () => {
                                 services.map( (elem, i) => {
                                     return (
                                         <div key={i} className="service-h1 flex items-center gap-[2vw] flex-shrink-0">
-                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] mob:text-[8vw]'>
+                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] tab:text-[5.5vw] mob:text-[9.5vw]'>
                                                 {elem}
                                             </h1>
-                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] mob:text-[8vw]'>
+                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] tab:text-[5.5vw] mob:text-[9.5vw]'>
                                                 -
                                             </h1>
                                         </div>

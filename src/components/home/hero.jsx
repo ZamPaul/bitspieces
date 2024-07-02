@@ -104,25 +104,46 @@ let blocks = [
 ]
 
 export const Graphic = ({w, h}) => {
+
+    const dimensions = Getdimensions();
+
+    const ese = bezier(0.83, 0, 0.17, 1)
+
+    useGSAP(()=>{
+        if(dimensions.w>=576){
+          gsap.fromTo(".graphic",
+            { 
+              clipPath:"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" 
+            },
+            {
+              clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
+              delay: 1.2, 
+              duration: 1.2, 
+              ease: ese
+            }
+          )
+        }
+    },[dimensions])
+
     return (
-        <motion.div
+        <div
          style={{
             width:w,
             height:h,
          }}
-         variants={{
-            init:{
-                opacity: 1,
-                clipPath:"polygon(0 0, 0% 0, 0% 100%, 0 100%)"
-            },
-            anim:{
-                opacity: 1,
-                clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                transition:{delay: 1.2, duration: 1.2, ease:[0.83, 0, 0.17, 1]}
-            }
-         }}
-         initial='init'
-         animate='anim'
+        //  variants={{
+        //     init:{
+        //         opacity: 1,
+        //         clipPath:"polygon(0 0, 0% 0, 0% 100%, 0 100%)"
+        //     },
+        //     anim:{
+        //         opacity: 1,
+        //         clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        //         transition:{delay: 1.2, duration: 1.2, ease:[0.83, 0, 0.17, 1]}
+        //     }
+        //  }}
+        //  initial='init'
+        //  animate='anim'
          className={`graphic mob:hidden select-none overflow-hidden pointer-events-none relative rounded-[10px] w-[${w}] h-[${h}] bg-[#F1F1F1]`}>
             {
                 blocks.map( (block, i) => {
@@ -136,7 +157,7 @@ export const Graphic = ({w, h}) => {
                     )
                 } )
             }
-        </motion.div>
+        </div>
     )
 }
 
@@ -145,12 +166,11 @@ const Poster = () => {
     const dimensions = Getdimensions();
 
     useGSAP(()=>{
-        gsap.registerPlugin(ScrollTrigger)
-
-        const nim = gsap.to(".poster-image img",{
-            y:"15vh"
-        })
         if(dimensions.w>=1024 && dimensions.h<=1000){
+            gsap.registerPlugin(ScrollTrigger)
+            const nim = gsap.to(".poster-image img",{
+                y:"15vh"
+            })
             ScrollTrigger.create({
                 start:"4% top",
                 end:"bottom top",
@@ -195,6 +215,5 @@ export const Reveal = ({children, x}) => {
         </div>
     )
 }
-
 
 export default Hero
