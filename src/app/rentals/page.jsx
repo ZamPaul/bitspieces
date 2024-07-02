@@ -16,8 +16,8 @@ const Rentals = () => {
         <RentalEquipments/>
     </div>
     <div className='bg-[#F1F1F1]'>
-       <Marquee/>
-       <FooterTest/>
+       {/* <Marquee/> */}
+       {/* <FooterTest/> */}
     </div>
     </>
   )

@@ -12,8 +12,8 @@ const Services = () => {
     <ServiceHero/>
     <ServicesWrap/>
     <div className='bg-white'>
-      <Marquee/>
-      <FooterTest/>
+      {/* <Marquee/> */}
+      {/* <FooterTest/> */}
     </div>
     </>
   )
