@@ -168,7 +168,7 @@ const Right = () => {
                     }
                 </div>
                 <div className="address">
-                    <p className='text-black text-[14px]'>
+                    <p className='text-black text-[14px] mob:text-[15px]'>
                         Warehouse no. 9, 23rd Street, Al Quoz 1st Industrial, . P.O Box 282747, Dubai UAE
                     </p>
                 </div>
@@ -190,10 +190,10 @@ const Right = () => {
                         <Button value={'info@bitspieces.org'}/>
                         <Button value={'+971566931759'}/>
                     </div>
-                    <p className='text-black text-[14px]'>
+                    <p className='text-black text-[14px] mob:text-[15px]'>
                         Through constant development and innovation, unwavering professionalism, consistency, timely delivery, and dedication, our machinery of limitless creativity has allowed us to grow professionally our experience and build a solid reputation in the business throughout the years.
                     </p>
-                    <p className='text-black text-[14px]'>
+                    <p className='text-black text-[14px] mob:text-[15px]'>
                         We strive to continue learning and further improve our skills and craftmanship to ensure top-notch service we deliver to our valued clients.
                     </p>
                 </div>

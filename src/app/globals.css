@@ -232,9 +232,8 @@ main{
     }
 }
 
-@media (min-height:600px) and (max-height:800px) and (max-width:1200px) {
+@media (min-height:600px) and (max-height:800px) and (max-width:1200px) and (min-width:1024px) {
     .hero-content .wrap{
-        /* background-color: #b8a3f22a; */
         height: 8.2vw;
     }
     .hero-content .wrap h1{
