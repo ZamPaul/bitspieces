@@ -34,7 +34,7 @@ const ServicesWrap = () => {
             <p className='text-[2.2vw] mob:text-[20px] w-[65%] mob:w-full text-[#fff]'>
                 {p}
             </p>
-            <Button value={"Our Work"} href={"/work"}/>
+            <Button value={"Our Work"} href={"/work"} keyPass={"Service-page-work-btn"}/>
         </div>
         <div className='gallery-mapper-wrap flex flex-col w-full'>
             <ServicesMap/>

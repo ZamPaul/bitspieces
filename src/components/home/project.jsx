@@ -1,9 +1,9 @@
 "use client"
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
-import React, { forwardRef, useEffect, useRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 
-const Project = forwardRef(({title ,subTitle, keyValue, src}, ref) => {
+const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
 
   const mouseEnter = () => {
     // setting ll other projects to opcity 0.6 n bluriing them

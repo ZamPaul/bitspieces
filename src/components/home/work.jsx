@@ -9,7 +9,7 @@ const Work = () => {
     <div data-scroll-section className='bg-black relative z-[30] w-full py-[10vh] pb-[15vh] flex flex-col items-center gap-[4vw] tab:gap-[8vw] mob:gap-[10vw] rounded-b-[20px]'>
       <TextIntro/>
       <Gallery/>
-      <Button value={'View Archive'} href={"/work"}/>
+      <Button value={'View Archive'} href={"/work"} keyPass={"home_work_btn"}/>
     </div>
   )
 }
@@ -59,7 +59,7 @@ const Gallery = () => {
       {
         array.map( (elem, i) => {
           return (
-            <Project ref={projects} title={elem.title} subTitle={elem.subTitle} src={elem.src} keyValue={i}/>
+            <Project ref={projects} title={elem.title} subTitle={elem.subTitle} src={elem.src} keyValue={i} key={`home_project_${i}`}/>
           )
         } )
       }

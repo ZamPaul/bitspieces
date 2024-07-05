@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import DisplayGallery from './display-gallery'
 import GetUpperText from './getUpperText'
 import { findGallery } from '../hooks/data'
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Pin from '../pin/pin'
@@ -61,7 +60,7 @@ const Filter = ({service}) => {
                 {
                     filterArray.map((elem,i)=>{
                         return (
-                            <FilterBtn key={`filter_btn_${i+1}`} value={elem.value} href={elem.href}/>
+                            <FilterBtn key={`filter_btn_${i}`} value={elem.value} href={elem.href}/>
                         )
                     })
                 }
@@ -77,7 +76,7 @@ const FilterBtn = ({value, key, href}) => {
     const router = useRouter();
 
     return (
-        <TransitionLink className={`${href==pth?"active-filter-link":"filter-link"}`} href={href} key={key} router={router}>
+        <TransitionLink href={href} key={key} router={router} className={""}>
             <motion.div
              initial={"init"}
              whileHover={"hover"}
@@ -104,33 +103,6 @@ const FilterBtn = ({value, key, href}) => {
                 </motion.h2>
             </motion.div>
         </TransitionLink>
-        // <Link href={href} key={key} className={`${href==pth?"active-filter-link":"filter-link"}`}>
-        //     <motion.div
-        //     initial={"init"}
-        //     whileHover={"hover"}
-        //     variants={{
-        //     init:{
-        //         backgroundColor:pth==href?"#e0fd60":"#121212"
-        //     },
-        //     hover:{
-        //         backgroundColor:"#e0fd60"
-        //     }
-        //     }}
-        //     className={`py-[10px] mob:py-[8px] cursor-pointer rounded-full border-[0.1px] border-yellow px-[30px] mob:px-[25px]`}>
-        //     <motion.h2 
-        //         variants={{
-        //         init:{
-        //             color:pth==href?"#121212":"#fff"
-        //         },
-        //         hover:{
-        //             color:"#121212"
-        //         }
-        //         }}
-        //         className='text-[20px] tab:text-[18px] mob:text-[17px]'>
-        //         {value}
-        //     </motion.h2>
-        //     </motion.div>
-        // </Link>
     )
 }
 

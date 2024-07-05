@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import TransitionLink from '../TransitionLink/TransitionLink'
 import animatePageOut from '../hooks/animatePageOut'
 import FooterCtaButton from '../FooterCtaButton/FooterCtaButton'
+import Link from 'next/link'
 
 // W w A a D d Q q'
 
@@ -121,14 +122,15 @@ const FooterLink = ( {children, href} ) => {
   
     const router = useRouter();
   
-    const click = () => {
+    const click = (e) => {
+      e.preventDefault()
       animatePageOut(href,router,pth)
     }
   
     return (
-      <button onClick={click} className='logo-wrap relative w-[130px] tab:w-[90px] mob:w-[100px] h-[130px] mob:h-[100px] tab:h-[90px] mob:left-[-10px] left-[-25px] tab:left-[-10px] mb-[5vh]'>
+      <Link onClick={click} href={href} className='logo-wrap relative w-[130px] tab:w-[90px] mob:w-[100px] h-[130px] mob:h-[100px] tab:h-[90px] mob:left-[-10px] left-[-25px] tab:left-[-10px] mb-[5vh]'>
         {children}
-      </button>
+      </Link>
     )
 }
 

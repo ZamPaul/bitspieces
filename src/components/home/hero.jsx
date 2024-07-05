@@ -26,7 +26,7 @@ const Hero = () => {
                             </p>
                         </div>
                         <div className='tab:ml-[3vw] mob:hidden'>
-                            <Button value={"Let's Talk"} href={"/contact"}/>
+                            <Button value={"Let's Talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
                         </div>
                     </div>
                     <div className="wrap flex items-center justify-start h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
@@ -46,7 +46,7 @@ const Hero = () => {
                                 Art department, advertising, Film Making, Event Management, rentals and much more.
                             </p>
                             <div className="hidden mob:block mt-[3vh]">
-                                <Button value={"Let's talk"} href={"/contact"}/>
+                                <Button value={"Let's talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
                             </div>
                     </div>
                 </div>
@@ -131,19 +131,6 @@ export const Graphic = ({w, h}) => {
             width:w,
             height:h,
          }}
-        //  variants={{
-        //     init:{
-        //         opacity: 1,
-        //         clipPath:"polygon(0 0, 0% 0, 0% 100%, 0 100%)"
-        //     },
-        //     anim:{
-        //         opacity: 1,
-        //         clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        //         transition:{delay: 1.2, duration: 1.2, ease:[0.83, 0, 0.17, 1]}
-        //     }
-        //  }}
-        //  initial='init'
-        //  animate='anim'
          className={`graphic mob:hidden select-none overflow-hidden pointer-events-none relative rounded-[10px] w-[${w}] h-[${h}] bg-[#F1F1F1]`}>
             {
                 blocks.map( (block, i) => {

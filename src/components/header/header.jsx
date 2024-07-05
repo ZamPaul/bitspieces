@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import logoScroll from '../hooks/logoScroll'
 import Toggle from '../toggle/toggle'
 import animatePageOut from '../hooks/animatePageOut'
+import Link from 'next/link'
 
 const Header = () => {
 
@@ -80,14 +81,15 @@ const LogoLink = forwardRef( ( {children, href}, ref ) => {
 
   const router = useRouter();
 
-  const click = () => {
+  const click = (e) => {
+    e.preventDefault()
     animatePageOut(href,router,pth)
   }
 
   return (
-    <button ref={ref} onClick={click} className='logo relative -left-[10px]'>
+    <Link ref={ref} href={href} onClick={click} className='logo relative -left-[10px]'>
       {children}
-    </button>
+    </Link>
   )
 })
 

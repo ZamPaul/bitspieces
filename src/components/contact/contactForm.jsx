@@ -50,7 +50,7 @@ const Form = () => {
             <div className="inputs-wrap flex flex-col gap-[30px]">
                 {
                     inputs.map((input,i)=>{
-                        return <Input name={input.name} key={i} type={input.type} id={input.id}/>
+                        return <Input name={input.name} key={`Input_${i}`} type={input.type} id={input.id}/>
                     })
                 }
                 <group className="group flex flex-col gap-[10px]">
@@ -150,7 +150,6 @@ const Input = ({name, key, type, id}) => {
         </group>
     )
 }
-
 
 
 export default ContactForm

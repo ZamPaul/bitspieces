@@ -1,8 +1,7 @@
 // W w A a D d Q q'
 "use client"
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import React, { useRef } from 'react'
+import React from 'react'
 import { social } from '../footer/footerTest'
 import { usePathname, useRouter } from 'next/navigation'
 import Getdimensions from '../getdimensions/getdimensions'
@@ -71,7 +70,6 @@ const Menu = () => {
   
   const router = useRouter();
 
-  const linkRefs = useRef([])
 
   return (
     <motion.div 
@@ -109,7 +107,7 @@ const Menu = () => {
         {
             links.map((link,i)=>{
                 return (
-                    <TransitionLink key={i} href={link.href} router={router} className={""}>
+                    <TransitionLink key={`Menu_link_${i}`} href={link.href} router={router} className={""}>
                         <motion.h2 custom={i} initial={"init"} variants={linksVariants} animate={"enter"} exit={"exit"} className={`${pth == link.href ? "active-link": "link"} text-[2.2vw] tab:text-[2.6vh] mob:text-[8.4vw] font-[900] text-black leading-[1.2em]`}>
                             {link.label}
                         </motion.h2>

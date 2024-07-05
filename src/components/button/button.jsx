@@ -4,10 +4,10 @@ import React from 'react'
 import TransitionLink from '../TransitionLink/TransitionLink'
 import { useRouter } from 'next/navigation'
 
-const Button = ({value, href}) => {
+const Button = ({value, href, keyPass}) => {
   const router = useRouter();
   return (
-    <TransitionLink href={href} router={router} className={""} key={"Tranisition_Button"}>
+    <TransitionLink href={href} router={router} className={""} key={keyPass}>
         <motion.div
         initial={'init'}
         whileHover={'hover'}

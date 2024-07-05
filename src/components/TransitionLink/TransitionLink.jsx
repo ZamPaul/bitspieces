@@ -1,19 +1,23 @@
-import React, { forwardRef, useEffect } from 'react'
+"use client"
+import React from 'react'
 import animatePageOut from '../hooks/animatePageOut'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link';
 
 const TransitionLink = ({children, href, router, key, className}) => {
 
   const pth = usePathname();
 
-  const click = () => {
+  const click = (e) => {
+    e.preventDefault()
     animatePageOut(href,router,pth)
   }
 
   return (
-    <button key={key} onClick={click} className={className}>
+    <Link href={`${href}`} key={key} onClick={click} className={className}>
       {children}
-    </button>
+    </Link>
   )
 }
+
 export default TransitionLink
