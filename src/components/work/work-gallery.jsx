@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import React, { useEffect, useState } from 'react'
 import DisplayGallery from './display-gallery'
 import GetUpperText from './getUpperText'
@@ -8,7 +8,8 @@ import { motion } from 'framer-motion'
 import Pin from '../pin/pin'
 import TransitionLink from '../TransitionLink/TransitionLink'
 
-const WorkGallery = ({service, array}) => {
+
+const WorkGallery = async ({service, array}) => {
 
   return (
     <div className='work-wrapper w-full relative z-[30] rounded-b-[20px] bg-black pt-[35vh] tab:pt-[30vh] tab:pb-[5vh] flex justify-center'>
