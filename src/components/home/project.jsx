@@ -6,21 +6,19 @@ import React, { forwardRef } from 'react'
 const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
 
   const mouseEnter = () => {
-    // setting ll other projects to opcity 0.6 n bluriing them
+    // setting all other projects to opccity 0.3
     ref.current.forEach(project => {
         gsap.to(project,{
-            opacity: 0.6,
-            filter:"blur(1px)",
+            opacity: 0.5,
             duration:.5,
             ease:"power4.inOut"
         })
     });
     
-    // setting the hovere project to opcity 1
+    // setting the hover project to opacity 1
   
     gsap.to(ref.current[keyValue],{
         opacity: 1,
-        filter:"blur(0px)",
         duration:.5,
         ease:"power4.inOut"
     })

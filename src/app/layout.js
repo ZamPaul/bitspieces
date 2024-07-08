@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true} suppressContentEditableWarning>
       <body className={inter.className}>
           {children}
           <MenuOverlay/>

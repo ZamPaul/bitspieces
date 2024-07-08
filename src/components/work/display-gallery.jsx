@@ -1,16 +1,20 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Project from '../home/project'
-import gsap from 'gsap'
 import getGallery from './getGallery'
 import { shuffledArray } from '../hooks/data'
-
 
 const DisplayGallery = ({service}) => {
 
   const projects = useRef([])
 
-  let array = service=="All" ? shuffledArray.slice(0,25) : getGallery(service)
+  // let array = service=="All"?shuffledArray:getGallery(service)
+
+  const [array, setArray] = useState([])
+
+  useEffect(()=>{
+    service=="All" ? setArray(shuffledArray.slice(0,25)) : setArray(getGallery(service))
+  },[])
 
   return (
     <div className="gallery-mapper w-full flex justify-between flex-wrap gap-y-[6vh]">

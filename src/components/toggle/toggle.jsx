@@ -5,7 +5,6 @@ import Menu from '../menu/menu'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { usePathname } from 'next/navigation'
-// W w A a D d Q q'
 
 const lines = [
   {
@@ -89,7 +88,7 @@ const Toggle = () => {
 
   useGSAP(()=>{
 
-    menuOpen ? turnColor("#fff") : turnColor("#e0fd60")
+    menuOpen ? turnColor("#fff") : turnColor("#ffd100")
     menuOpen ? changeOverlay(2, 50, "all") : changeOverlay(0, 100, "none")
     changeOverlay();
 
@@ -122,7 +121,7 @@ const Toggle = () => {
             transform:`translateX(-50%) translateY(-50%) scale(0)`,
           }
          }}
-         className="back-overlay absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full bg-yellow"/>
+         className="back-overlay bg-yellow absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full"/>
         <div className="lines-wrapper h-[12px] w-[28px] relative flex flex-col justify-center gap-[5px]">
           {
             lines.map( (line, i) => {

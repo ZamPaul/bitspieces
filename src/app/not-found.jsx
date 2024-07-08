@@ -28,7 +28,7 @@ const NotFoundUpper = () => {
         <p className='text-[#ffffffd0]'>
           We broke the internet
         </p>
-        <div className="home-btn w-full border-t-[0.1px] pt-[5vh] tab:pt-[3vh] bottom-t-[var(--bor)]">
+        <div className="home-btn flex w-full border-t-[0.1px] pt-[5vh] tab:pt-[3vh] bottom-t-[var(--bor)]">
             <Button value={"Return to Home"} href={"/"}/>
         </div>
       </div>

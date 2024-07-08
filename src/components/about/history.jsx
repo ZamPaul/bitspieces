@@ -26,40 +26,40 @@ const History = () => {
   const dimensions = Getdimensions();
 
   useGSAP(()=>{
-    gsap.registerEffect(ScrollTrigger)
-    if(dimensions.w>=1024 && dimensions.h<=1000){
-        ScrollTrigger.create({
-            trigger:".lower",
-            start:"top top",
-            endTrigger:".right",
-            end:"bottom bottom",
-            // markers:true,
-            pin:img.current,
-            pinnedContainer: img.current,
+    // gsap.registerEffect(ScrollTrigger)
+    // if(dimensions.w>=1024 && dimensions.h<=1000){
+    //     ScrollTrigger.create({
+    //         trigger:".lower",
+    //         start:"top top",
+    //         endTrigger:".right",
+    //         end:"bottom bottom",
+    //         // markers:true,
+    //         pin:img.current,
+    //         pinnedContainer: img.current,
             
-            scrub:true
-        })
-    }
+    //         scrub:true
+    //     })
+    // }
    
   },[dimensions])
 
   return (
-    <div className="about-info z-[30] w-full pt-[35vh] tab:pt-[30vh] pb-[15vh] tab:pb-[10vh] mob:pb-[10vh] text-black flex flex-col justify-start items-center bg-white">
+    <div className="about-info z-[30] w-full pt-[35vh] tab:pt-[30vh] mob:pb-[10vh] flex flex-col justify-start items-center">
         <div className="info-wrap w-[93%] flex flex-col gap-[7vh] tab:gap-[5vh] mob:gap-[5vh]">
             <Pin trigger={"#main"} endTrigger={".lower"} start={"top top"} end={"top top"} move={true}>
                 <div className="upper-text w-full">
-                    <h1 className='text-[5vw] mob:text-[8vw] uppercase tracking-[0px] font-[mon] text-black leading-[1.1em] mob:leading-[1.2em]'>
+                    <h1 className='text-[5vw] mob:text-[8vw] uppercase tracking-[0px] font-[mon] leading-[1.1em] mob:leading-[1.2em]'>
                     The Bits & Pieces<br/>Approach to Creative<br/>Solutions
                     </h1>
                 </div>
             </Pin>
-            <div className="lower w-full relative bg-white flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[#12121280]">
+            <div className="lower bg-black w-full relative flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)]">
                 <div className="left w-1/2 mob:w-full">
                     <div ref={img} className="pin-wrapper relative flex flex-col items-start gap-[20px]">
                         <div className="image-wrap rounded-[10px] w-[35vw] mob:w-[93vw] h-[35vw] mob:h-[40vh] overflow-hidden">
                             <img src="./assets/art/art14.webp" alt="image" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
                         </div>
-                        <p className='text-[#121212]'>
+                        <p className="">
                             Human Billiard Table - Fabrication
                         </p>
                     </div>
@@ -68,7 +68,7 @@ const History = () => {
                     {
                         paras.map((value, i) => {
                             return (
-                                <p key={i} className='text-[2.2vw] mob:text-[20px] leading-[1.3em] text-black'>
+                                <p key={i} className='text-[2.2vw] mob:text-[20px] leading-[1.3em]'>
                                     {value}
                                 </p>
                             )

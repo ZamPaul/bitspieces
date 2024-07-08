@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import React, { useEffect, useState } from 'react'
 import DisplayGallery from './display-gallery'
 import GetUpperText from './getUpperText'
@@ -9,7 +9,7 @@ import Pin from '../pin/pin'
 import TransitionLink from '../TransitionLink/TransitionLink'
 
 
-const WorkGallery = async ({service, array}) => {
+const WorkGallery = ({service}) => {
 
   return (
     <div className='work-wrapper w-full relative z-[30] rounded-b-[20px] bg-black pt-[35vh] tab:pt-[30vh] tab:pb-[5vh] flex justify-center'>
@@ -49,7 +49,7 @@ const Filter = ({service}) => {
     ]
 
     let curr = service=="All"?"All" : filterArray[findGallery.indexOf(service) + 1].value
-
+    
     return (
         <div className="filter-wrapper relative w-full flex mob:flex-col justify-between items-center mob:items-start mb-[10vh] tab:mb-[5vh] mob:mb-[5vh] mob:gap-[30px]">
             <div className="left">
@@ -83,10 +83,10 @@ const FilterBtn = ({value, key, href}) => {
              whileHover={"hover"}
              variants={{
                 init:{
-                    backgroundColor:pth==href?"#e0fd60":"#121212"
+                    backgroundColor:pth==href?"#ffd100":"#121212"
                 },
                 hover:{
-                    backgroundColor:"#e0fd60"
+                    backgroundColor:"#ffd100"
                 }
              }}
              className={`py-[10px] mob:py-[8px] cursor-pointer rounded-full border-[0.1px] border-yellow px-[30px] mob:px-[25px]`}>

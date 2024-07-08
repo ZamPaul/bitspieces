@@ -15,10 +15,14 @@ const Marquee = () => {
 
   useGSAP(() => {
 
+    gsap.registerPlugin(ScrollTrigger)
+    
     ScrollTrigger.create({
         trigger:"#main",
         start:"top top",
         end:"bottom bottom",
+        invalidateOnRefresh: true,
+        scrub: true,
         // markers: true,
         onUpdate: (e) => {
             direction = e.direction
@@ -50,9 +54,11 @@ const Marquee = () => {
     if(inner.current){
         requestAnimationFrame(anim)
     }
+
   })
   
   return (
+    <>
     <div className='marquee-wrapper overflow-hidden relative shadow-[0_35px_60px_0px_rgba(0,0,0,0.3)] z-[25] w-full mt-[-5vh] pt-[10vh] pb-[5vh] bg-yellow rounded-b-[20px] pointer-events-none'>
         <div ref={inner} className="marquee-inner w-full flex justify-center flex-shrink-0 gap-[2vw]">
             {
@@ -79,6 +85,8 @@ const Marquee = () => {
             }
         </div>
     </div>
+    </>
+    
   )
 }
 

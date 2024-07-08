@@ -10,7 +10,8 @@ const urls = [
     "/about",
     "/rentals",
     "/contact",
-    "/privacy-policy"
+    "/privacy-policy",
+    "/terms-of-services"
 ]
 
 export const getPageName = () => {

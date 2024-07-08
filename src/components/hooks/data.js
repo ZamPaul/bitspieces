@@ -186,7 +186,7 @@ export const Gallerys = [ events, arts, ads ]
 
 export const findGallery = ["event-management","art-department","advertisement"]
 
-const combinedArray = [...events, ...arts, ...ads];
+export const combinedArray = [...events, ...arts, ...ads];
 
 export const className = "text-[5vw] mob:text-[8vw] font-[mon] uppercase leading-[1.1em] mob:leading-[1.2em] tracking=[0px]"
 

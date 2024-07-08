@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
 :root{
     --grey:#ebecf0;
     --offwhite: #F1F1F1;
     /* --black:#1c1d20; */
     --black:#121212;
-    --yellow:#e0fd60;
+    --yellow2:#e0fd60;
+    --yellow: #ffd92f;
     --bor: #808080;
     --sli:#242426;
     --purp:#b8a3f2;

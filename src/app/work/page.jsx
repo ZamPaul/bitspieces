@@ -2,7 +2,7 @@
 import FooterTest from '@/components/footer/footerTest'
 import Marquee from '@/components/home/marquee'
 import WorkGallery from '@/components/work/work-gallery'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const Page = () => {
   return (

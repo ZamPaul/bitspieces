@@ -1,4 +1,3 @@
-import React from 'react'
 import { findGallery, Gallerys } from '../hooks/data'
 
 const getGallery = (service) => {

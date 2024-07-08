@@ -4,14 +4,13 @@ import Svg from '../svg/svg'
 import { useSpring } from 'framer-motion'
 import gsap from 'gsap'
 import { usePathname, useRouter } from 'next/navigation'
-import logoScroll from '../hooks/logoScroll'
 import Toggle from '../toggle/toggle'
 import animatePageOut from '../hooks/animatePageOut'
 import Link from 'next/link'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
 const Header = () => {
-
-  let pathname = usePathname();
 
   let h1ref = useRef(null)
 
@@ -26,27 +25,33 @@ const Header = () => {
   })
 
   let svg = {
-    stroke:useSpring("#e0fd60"),
-    fill:useSpring("#e0fd60")
+    stroke:useSpring("#ffd100"),
+    fill:useSpring("#ffd100")
   }
-  
-  useEffect(()=>{
-    gsap.set(h1ref.current,{
-        color:"#fff"
-    })
-    if(pathname=='/about' || pathname=="/rentals" || pathname=="/privacy-policy"){
-        gsap.set(h1ref.current,{
-            color:"#121212"
-        })
-        svg.fill.set("#e0fd60")
-        svg.stroke.set("#121212")
-    }else{
-        svg.fill.set("#e0fd60")
-        svg.stroke.set("#e0fd60")
-    }
-  },[pathname])
 
-  logoScroll();
+  useGSAP(()=>{
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.set("header .logo-outer .logo",{
+      top:"0%"
+    })
+
+    const moveUp = gsap.to("header .logo-outer .logo",{
+      top:"-100%"
+    })
+    
+    ScrollTrigger.create({
+      start:"top top",
+      end:"10px top",
+      trigger:"#main",
+      animation: moveUp,
+      scrub:1,
+      // markers:true,
+      invalidateOnRefresh: true,
+    })
+
+  })
 
   return (
     <header className='header flex justify-center pointer-events-none z-[1000] fixed w-[93%] mob:w-[90%] left-1/2 -translate-x-1/2 top-[5vh] tab:top-[2.5vh] mob:top-[4vh]'>

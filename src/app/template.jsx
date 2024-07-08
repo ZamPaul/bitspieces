@@ -6,18 +6,35 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { getPageName } from '@/components/hooks/getPageName'
 import Svg from '@/components/svg/svg'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Template = ({children}) => {
 
   useEffect(()=>{
+
+    gsap.registerPlugin(ScrollTrigger)
+
     const lenis = new Lenis()
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+    // function raf(time) {
+    //   lenis.raf(time)
+    //   requestAnimationFrame(raf)
+    // }
 
-    requestAnimationFrame(raf)
+    // requestAnimationFrame(raf)
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time)=>{
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+
+  },[])
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
   },[])
 
   useGSAP(()=>{
@@ -40,7 +57,7 @@ const Template = ({children}) => {
 
   return (
     <> 
-    <main id='main'>
+    <main id='main' className='main'>
         {children}
     </main>
 
