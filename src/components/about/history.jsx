@@ -1,12 +1,6 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
-import Image from "next/image"
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import gsap from "gsap" 
-import { useGSAP } from '@gsap/react'
+import React, { useRef } from 'react'
 import Pin from '../pin/pin'
-import Getdimensions from '../getdimensions/getdimensions'
-
 
 const paras = [
     "Bits & Pieces is a Dubai based professional and leading Art Department company in commercial and film industry. Since its humble beginnings, it has established a reputation as the go-to art direction and props construction master with all the well-known and prominent agencies and directors in the UAE and other countries. Our team of talented, results-oriented, dedicated, and passionate staff makes the craft we deliver more impactful.",
@@ -23,26 +17,6 @@ const History = () => {
 
   let img = useRef(null)
 
-  const dimensions = Getdimensions();
-
-  useGSAP(()=>{
-    // gsap.registerEffect(ScrollTrigger)
-    // if(dimensions.w>=1024 && dimensions.h<=1000){
-    //     ScrollTrigger.create({
-    //         trigger:".lower",
-    //         start:"top top",
-    //         endTrigger:".right",
-    //         end:"bottom bottom",
-    //         // markers:true,
-    //         pin:img.current,
-    //         pinnedContainer: img.current,
-            
-    //         scrub:true
-    //     })
-    // }
-   
-  },[dimensions])
-
   return (
     <div className="about-info z-[30] w-full pt-[35vh] tab:pt-[30vh] mob:pb-[10vh] flex flex-col justify-start items-center">
         <div className="info-wrap w-[93%] flex flex-col gap-[7vh] tab:gap-[5vh] mob:gap-[5vh]">
@@ -56,7 +30,7 @@ const History = () => {
             <div className="lower bg-black w-full relative flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)]">
                 <div className="left w-1/2 mob:w-full">
                     <div ref={img} className="pin-wrapper relative flex flex-col items-start gap-[20px]">
-                        <div className="image-wrap rounded-[10px] w-[35vw] mob:w-[93vw] h-[35vw] mob:h-[40vh] overflow-hidden">
+                        <div className="image-wrap rounded-[10px] w-[30vw] mob:w-[93vw] h-[30vw] mob:h-[40vh] overflow-hidden">
                             <img src="./assets/art/art14.webp" alt="image" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
                         </div>
                         <p className="">
@@ -68,7 +42,7 @@ const History = () => {
                     {
                         paras.map((value, i) => {
                             return (
-                                <p key={i} className='text-[2.2vw] mob:text-[20px] leading-[1.3em]'>
+                                <p key={i} className='text-[17px] mob:text-[17px] leading-[1.3em]'>
                                     {value}
                                 </p>
                             )

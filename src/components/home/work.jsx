@@ -1,12 +1,11 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Button from '../button/button'
-import Project from './project'
+import Project from '../Project/project'
 
 const Work = () => {
-
   return (
-    <div data-scroll-section className='bg-black relative z-[30] w-full py-[10vh] pb-[15vh] flex flex-col items-center gap-[4vw] tab:gap-[8vw] mob:gap-[10vw] rounded-b-[20px]'>
+    <div className='home-work-section bg-black relative z-[30] w-full pt-[7vh] tab:pt-[5vh] pb-[15vh] tab:pb-[10vh] flex flex-col items-center gap-[4vw] tab:gap-[8vw] mob:gap-[10vw] rounded-b-[20px]'>
       <TextIntro/>
       <Gallery/>
       <Button value={'View Archive'} href={"/work"} keyPass={"home_work_btn"}/>
@@ -16,12 +15,9 @@ const Work = () => {
 
 const TextIntro = () => {
   return (
-    <div className="text-info w-[93%] flex flex-col justify-start gap-[2vw] mob:gap-[8vw] pr-[15vw] tab:pr-[0] mob:pr-[0]">
-      <h2 className='text-grey text-[18px]'>
-        Bits & Pieces
-      </h2>
-      <p className='text-[3vw] tab:text-[4vw] mob:text-[7vw] leading-[1.35em]'>
-        Based in the vibrant city of Dubai, we pride ourselves on delivering unparalleled creativity and professionalism in every project we undertake.
+    <div className="text-info w-[93%] flex flex-col justify-start pb-[6vh] tab:pb-[4.5vh] mob:pb-[3vh] border-b-[1px] border-b-[var(--bor)]">
+      <p className='text-[3vw] font-[mon] tracking-[1px] leading-none mob:leading-[1.3em] uppercase tab:text-[4vw] mob:text-[7vw]'>
+        Featured Projects
       </p>
     </div>
   )

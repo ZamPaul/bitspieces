@@ -111,6 +111,7 @@ main{
 
 .para-link::after{
     bottom: -2px;
+    background-color: #fff;
 }
 
 .link:hover::after, .email-link:hover::after, .phone-link:hover::after, .active-link:hover::after{
@@ -314,3 +315,60 @@ main{
         height: 33vw;
     }
 }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 5vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #121212;
+    -webkit-mask: radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
+    transform-origin: 50% 40%;
+    animation: l25 1s infinite linear;
+  }
+  @keyframes l25 {
+    100% {transform: rotate(1turn)}
+  }
+
+
+.services-right-wrap .service-item:nth-child(1){ 
+    border-top: 1px solid var(--bor);
+}
+
+.services-right-wrap{
+    width: calc(100% - 4vw);
+}
+
+@media (max-width:1024px) and (min-height:1000px) {
+    .services-right-wrap{
+        width: calc(100% - 6vw);
+    }
+}
+
+@media (max-width:576px) and (max-height:1000px) {
+    .services-right-wrap{
+        width: calc(100% - 7vw);
+    }
+}
+
+.home-services-section h1, .home-services-section p, .home-services-section h2 {
+    /* color: #121212; */
+}
+
+.bar .dot:nth-child(2){
+    top: calc(0% + 8.5vh);
+}
+
+.bar .dot:nth-child(3){
+    top: calc(25% + 6.5vh);
+}
+
+.bar .dot:nth-child(4){
+    top: calc(50% + 8.5vh);
+}
+
+.bar .dot:nth-child(5){
+    top: calc(75% + 6.5vh);
+}
+
+

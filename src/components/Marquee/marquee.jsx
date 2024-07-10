@@ -1,8 +1,8 @@
 "use client";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, { useRef } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useEffect, useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 const services = ['Art department', 'rentals', 'event management', 'advertising']
@@ -59,7 +59,7 @@ const Marquee = () => {
   
   return (
     <>
-    <div className='marquee-wrapper overflow-hidden relative shadow-[0_35px_60px_0px_rgba(0,0,0,0.3)] z-[25] w-full mt-[-5vh] pt-[10vh] pb-[5vh] bg-yellow rounded-b-[20px] pointer-events-none'>
+    <div className='marquee-wrapper overflow-hidden relative shadow-[0_35px_60px_0px_rgba(0,0,0,0.3)] z-[25] w-full mt-[-6vh] tab:mt-[-5vh] pt-[12vh] tab:pt-[10vh] pb-[6vh] tab:pb-[5vh] bg-yellow rounded-b-[20px] pointer-events-none'>
         <div ref={inner} className="marquee-inner w-full flex justify-center flex-shrink-0 gap-[2vw]">
             {
                 [...Array(4)].map((_, i) => {
@@ -69,10 +69,10 @@ const Marquee = () => {
                                 services.map( (elem, i) => {
                                     return (
                                         <div key={i} className="service-h1 flex items-center gap-[2vw] flex-shrink-0">
-                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] tab:text-[5.5vw] mob:text-[9.5vw]'>
+                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[6vw] mob:text-[12vw]'>
                                                 {elem}
                                             </h1>
-                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[5vw] tab:text-[5.5vw] mob:text-[9.5vw]'>
+                                            <h1 className='tracking-[0px] uppercase font-[mon] text-black text-[6vw] mob:text-[12vw]'>
                                                 -
                                             </h1>
                                         </div>

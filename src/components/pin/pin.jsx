@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useRef } from 'react'
-import Getdimensions from '../getdimensions/getdimensions'
+import Getdimensions from '../hooks/getdimensions'
 
 const Pin = ({children, start, end, trigger, endTrigger}) => {
 

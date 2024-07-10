@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import { motion } from 'framer-motion'
 import React from 'react'
-import Getdimensions from '../getdimensions/getdimensions'
+import Getdimensions from '../hooks/getdimensions'
 import gsap from 'gsap'
 import bezier from 'bezier-easing'
 

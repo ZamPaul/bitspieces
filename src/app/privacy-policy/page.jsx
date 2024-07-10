@@ -1,5 +1,5 @@
 import FooterTest from '@/components/footer/footerTest'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import Policies from '@/components/privacy-policy/policies'
 import PrivacyIntroText from '@/components/privacy-policy/privacyIntroText'
 import React from 'react'

@@ -1,7 +1,7 @@
 "use client"
 import Button from '@/components/button/button'
 import FooterTest from '@/components/footer/footerTest'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import React from 'react'
 // W w A a D d Q q'
 

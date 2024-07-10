@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import Project from '../home/project'
+import Project from '../Project/project'
 import getGallery from './getGallery'
 import { shuffledArray } from '../hooks/data'
 

@@ -1,6 +1,6 @@
 'use client'
 import Rentalsoffer from '@/components/rentals/Rentalsoffer'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import React from 'react'
 import RentalEquipments from '@/components/rentals/RentalEquipments'
 import FooterTest from '@/components/footer/footerTest'

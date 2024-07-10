@@ -1,58 +1,62 @@
 'use client'
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React from 'react'
 import Button from '@/components/button/button'
-import {motion} from "framer-motion"
 import Pin from '../pin/pin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import Getdimensions from '../getdimensions/getdimensions'
+import Getdimensions from '../hooks/getdimensions'
 import gsap from 'gsap'
 import bezier from 'bezier-easing'
 
 const Hero = () => {
 
   return (
-    <div className="hero-wrapper w-full flex flex-col justify-start items-center pt-[30vh] tab:pt-[25vh] mob:pt-[25vh] bg-[#121212]">
-        <Pin trigger={"#main"} endTrigger={".poster"} start={"top top"} end={"top top"} move={true}>
-            <div className="hero-content relative w-full flex justify-center">
-                <div className="content-inner flex flex-col justify-center w-[93%]">
-                    <div className="wrap flex items-center justify-between h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
-                        <h1 className='uppercase font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>
-                            We are an
-                        </h1>
-                        <div className="services flex text-left tab:hidden mob:hidden">
-                            <p className='text-[17px] text-[#ffffffd0]'>
-                                Art department, advertising,<br/>Film Making, Event Management,<br/>rentals and much more.
-                            </p>
-                        </div>
-                        <div className='tab:ml-[3vw] mob:hidden'>
-                            <Button value={"Let's Talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
-                        </div>
-                    </div>
-                    <div className="wrap flex items-center justify-start h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
-                        <h1 className='uppercase font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>winning design</h1>
-                    </div>
-                    <div className="wrap flex justify-between items-center gap-[3vw] h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
-                        <Graphic w={"50vw"} h={"70%"}/>
-                        <Reveal x={"-42vw"}>
-                            <h1 className='uppercase mb-[0.04em] relative flex font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>
-                                Company
+    <div className="hero-wrapper w-full tab:min-h-fit mob:min-h-fit flex flex-col justify-start items-center pt-[30vh] tab:pt-[25vh] mob:pt-[25vh] bg-[#121212]">
+        {/* <Pin trigger={"#main"} endTrigger={".home-about-section"} start={"top top"} end={"top top"} move={true}> */}
+            <div className="hero-content relative w-full flex flex-col justify-center items-center">
+                <Pin trigger={"#main"} endTrigger={".home-about-section"} start={"top top"} end={"top top"} move={true}>
+                    <div className="content-inner flex flex-col justify-center w-[93%]">
+                        <div className="wrap flex items-center justify-between h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
+                            <h1 className='uppercase font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>
+                                We are an
                             </h1>
-                        </Reveal>
-                    </div>
-                    {/* // only for mobile => */}
-                    <div className="wrap hidden w-full mt-[3vh] tab:flex mob:flex mob:flex-col justify-center text-center mob:justify-start mob:items-center mob:text-center">
-                            <p className='text-[17px] text-[#ffffffe3]'>
-                                Art department, advertising, Film Making, Event Management, rentals and much more.
-                            </p>
-                            <div className="hidden mob:block mt-[3vh]">
-                                <Button value={"Let's talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
+                            <div className="services flex text-left tab:hidden mob:hidden">
+                                <p className='text-[17px] text-[#ffffffd0]'>
+                                    Art department, advertising,<br/>Film Making, Event Management,<br/>rentals and much more.
+                                </p>
                             </div>
+                            <div className='tab:ml-[3vw] mob:hidden'>
+                                <Button value={"Let's Talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
+                            </div>
+                        </div>
+                        <div className="wrap flex items-center justify-start h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
+                            <h1 className='uppercase font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>winning design</h1>
+                        </div>
+                        <div className="wrap flex justify-between items-center gap-[3vw] h-[6.6em] tab:h-[6vh] mob:h-[2.6em] w-full tab:justify-center  mob:justify-center">
+                            <Graphic w={"50vw"} h={"70%"}/>
+                            <Reveal x={"-42vw"}>
+                                <h1 className='uppercase mb-[0.04em] relative flex font-[mon] text-[7vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>
+                                    Company
+                                </h1>
+                            </Reveal>
+                        </div>
+                        {/* // only for mobile => */}
+                        <div className="wrap hidden w-full mt-[3vh] tab:flex mob:flex mob:flex-col justify-center text-center mob:justify-start mob:items-center mob:text-center">
+                                <p className='text-[17px] text-[#ffffffe3]'>
+                                    Art department, advertising, Film Making, Event Management, rentals and much more.
+                                </p>
+                                <div className="hidden mob:block mt-[3vh]">
+                                    <Button value={"Let's talk"} href={"/contact"} keyPass={"home_contact_btn"}/>
+                                </div>
+                        </div>
                     </div>
+                </Pin>
+                <div className="hero-lower-text relative w-[93%] mt-[6vh] py-[6vh] bg-black border-t-[1px] border-t-[var(--bor)] flex items-center justify-between">
+                    <p className='text-grey'>Shaping Perspectives, Crafting Stories</p>
+                    <p className='text-grey mob:hidden'>What can we do for you?</p>
                 </div>
             </div>
-        </Pin>
-        <Poster/>
+        {/* </Pin> */}
     </div>
   )
 }
@@ -172,7 +176,7 @@ const Poster = () => {
     },[dimensions])
 
     return (
-        <div className="poster relative bg-black w-[93%] mt-[2vw] tab:mt-[6vh] mob:mt-[5vh] pt-[6vh] border-t-[1px] border-t-[var(--bor)] flex flex-col gap-[6vh]">
+        <div className="poster relative bg-black w-[93%] mt-[6vh] tab:mt-[6vh] mob:mt-[5vh] pt-[6vh] border-t-[1px] border-t-[var(--bor)] flex flex-col gap-[6vh]">
             <div className="top-text flex items-center justify-between w-full">
                 <p className='text-grey'>Shaping Perspectives, Crafting Stories</p>
                 <p className='text-grey mob:hidden'>What can we do for you?</p>

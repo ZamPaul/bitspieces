@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { social } from '../footer/footerTest'
 import { usePathname, useRouter } from 'next/navigation'
-import Getdimensions from '../getdimensions/getdimensions'
+import Getdimensions from '../hooks/getdimensions'
 import TransitionLink from '../TransitionLink/TransitionLink'
 
 const links = [

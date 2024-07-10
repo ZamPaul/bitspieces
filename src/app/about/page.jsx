@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import History from '@/components/about/history'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import Process from '@/components/about/process'
 import FooterTest from '@/components/footer/footerTest'
 

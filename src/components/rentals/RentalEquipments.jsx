@@ -2,7 +2,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import Fixedframe from './Fixedframe'
 import gsap from 'gsap'
-import Getdimensions from '../getdimensions/getdimensions'
+import Getdimensions from '../hooks/getdimensions'
 
 // W w A a D d Q q'
 

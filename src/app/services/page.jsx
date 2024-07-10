@@ -1,6 +1,6 @@
 'use client'
 import FooterTest from '@/components/footer/footerTest'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import ServiceHero from '@/components/services/Service-hero'
 import ServicesWrap from '@/components/services/services'
 import React from 'react'

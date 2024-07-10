@@ -3,7 +3,7 @@ import ContactForm from '@/components/contact/contactForm'
 import ContactIntroText from '@/components/contact/contactIntroText'
 import Reach_Us from '@/components/contact/reachUs'
 import FooterTest from '@/components/footer/footerTest'
-import Marquee from '@/components/home/marquee'
+import Marquee from '@/components/Marquee/marquee'
 import React from 'react'
 
 const Contact = () => {

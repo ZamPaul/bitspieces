@@ -50,7 +50,7 @@ const ServicesMap = () => {
             return (
                 <div key={`Service_${i}`} className="service-item first:border-t-[1px] first:border-t-[var(--bor)] border-b-[1px] border-b-[var(--bor)] flex mob:flex-col items-start justify-between mob:items-start mob:justify-center w-full py-[8vh] tab:py-[6vh] mob:py-[6vh] mob:gap-[5vh]">
                     <div className="left h-full mob:h-fit flex flex-col items-start justify-center w-[55%] mob:w-full gap-[1.5vw] tab:gap-[3vw] mob:gap-[3vh]">
-                        <h1 className='text-[2.3vw] tab:text-[2.8vw] mob:text-[7vw] text-[#fff] uppercase'>
+                        <h1 className='text-[2.3vw] tab:text-[2.8vw] mob:text-[7vw] text-[#fff]'>
                             {item.name}
                         </h1>
                         <div className="extras w-full flex flex-wrap justify-start gap-[15px] gap-y-[18px]">

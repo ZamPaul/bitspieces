@@ -128,7 +128,7 @@ const FooterLowerLink = ({href, value, keyPass}) => {
 
 const Left = () => {
     return (
-        <div className="footer-left w-[50%] tab:w-[25%] mob:w-full flex flex-col justify-between items-start gap-[5vw]">
+        <div className="footer-left w-[50%] tab:w-[25%] mob:w-full flex flex-col justify-between items-start gap-[4vw]">
             <h1 className='font-[mon] font-[900] text-[3vw] uppercase leading-[1.2em] text-black tracking-[1px]'>
                 We are Your<br/>Creative Partners
             </h1>
@@ -139,19 +139,18 @@ const Left = () => {
 
 const CTA = () => {
     return (
-        <div className="call-to-action tab:hidden mob:hidden flex justify-between items-end gap-[2.5vw]">
+        <div className="call-to-action tab:hidden mob:hidden flex flex-col justify-between items-start gap-[1vw]">
+            <h2 className='text-[#121212b4] font-[900] uppercase mb-[8px]'>
+                Connect with Us:
+            </h2>
             <div className="contact-wrap flex flex-col items-start gap-[1vw]">
-                <h2 className='text-[#121212b4] font-[900] uppercase mb-[8px]'>
-                    Contact:
-                </h2>
-                <SocialButton value={'+971566931759'} href={'tel:+971566931759'} target={"_blank"}/>
-                <SocialButton value={'info@bitspieces.org'} href={'mailto:info@bitspieces.org'} target={"_self"}/>
-            </div>
-            <div className="location-wrap flex flex-col items-start gap-[1vw]">
-                <p className='text-[#121212] font-[100] mb-[5px]'>
-                    Warehouse no. 9, 23rd Street, Al Quoz 1st Industrial, . P.O Box 282747, Dubai UAE
-                </p>
-                <SocialButton value={'Locate Us'} href={'https://maps.app.goo.gl/WYEXbw32Mp1pFp3A9'} target={"_blank"}/>
+                <div className="upper flex gap-[1vw]">
+                    <SocialButton value={'+971566931759'} href={'tel:+971566931759'} target={"_blank"}/>
+                    <SocialButton value={'Locate Us'} href={'https://maps.app.goo.gl/WYEXbw32Mp1pFp3A9'} target={"_blank"}/>
+                </div>
+                <div className="lower">
+                    <SocialButton value={'info@bitspieces.org'} href={'mailto:info@bitspieces.org'} target={"_self"}/>
+                </div>
             </div>
         </div>
     )
@@ -161,25 +160,6 @@ const Right = () => {
     return (
         <div className="footer-right w-[45%] tab:w-[75%] mob:w-full flex mob:flex-col justify-start items-start gap-[0vw] tab:gap-[8vw]">
             <div className="social-and-info pl-[2vw] h-full flex flex-col justify-between items-start gap-[2vw] mob:gap-[4vw]">
-
-                <div className="social-links flex flex-col gap-[1vw]">
-                    <div className="social-heading">
-                        <h2 className='text-[#121212b4] uppercase font-[600] mb-[8px]'>
-                            Socials:
-                        </h2>
-                    </div>
-                    <div className="social-links-wrap flex gap-[1vw] items-start">
-                        {
-                            social.map((link, i) => {
-                                return (
-                                    <SocialLogo href={link.href} src={link.src} key={`Social_logo_${i}`}/>
-                                )
-                            })
-                        }
-                    </div>
-                    
-                </div>
-
                 <div className='info flex flex-col text-start gap-[2vh] mob:gap-[4vw]'>
                     {/* // visible only on tablets */}
 
@@ -196,7 +176,23 @@ const Right = () => {
                     </p>
 
                 </div>
-
+                <div className="social-links flex flex-col gap-[1vw]">
+                    <div className="social-heading">
+                        <h2 className='text-[#121212b4] uppercase font-[600] mb-[5px]'>
+                            Socials:
+                        </h2>
+                    </div>
+                    <div className="social-links-wrap flex gap-[1vw] items-start">
+                        {
+                            social.map((link, i) => {
+                                return (
+                                    <SocialLogo href={link.href} src={link.src} key={`Social_logo_${i}`}/>
+                                )
+                            })
+                        }
+                    </div>
+                    
+                </div>
             </div>
         </div>
     )

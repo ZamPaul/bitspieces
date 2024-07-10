@@ -5,7 +5,6 @@ import animatePageIn from '@/components/hooks/animatePageIn'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { getPageName } from '@/components/hooks/getPageName'
-import Svg from '@/components/svg/svg'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Template = ({children}) => {
@@ -14,7 +13,9 @@ const Template = ({children}) => {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const lenis = new Lenis()
+    const lenis = new Lenis({
+      lerp:0.1
+    })
 
     // function raf(time) {
     //   lenis.raf(time)
@@ -65,14 +66,14 @@ const Template = ({children}) => {
     style={{clipPath:"polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)"}} 
     id='transition-slide-in'
     className="transition-slide h-screen w-full fixed left-0 top-0 z-[3000] bg-yellow rounded-t-[15px] rounded-b-[15px] pointer-events-none">
-      <div className="transition-slide-inner h-full w-full relative flex items-center justify-start pl-[3.5%]">
+      <div className="transition-slide-inner h-full w-full relative flex items-center justify-start pl-[3.5%] pb-[0vh]">
         <div className='h1-outer relative overflow-hidden'>
           <h1 ref={h1ref} className='flex uppercase text-black relative font-[mon] text-[5vw] mob:text-[8vw] font-[100] tracking-[0px] leading-none'>
             {pageName}
           </h1>
         </div>
-        <div className="svg-rpper w-[150px] mob:w-[100px] h-[150px] mob:h-[100px] absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
-          <Svg fill={"#121212"} stroke={"#121212"} px={"1px"}/>
+        <div className="loader-wrapper absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
+          <div className="loader"></div>
         </div>
       </div>
     </div>
@@ -82,8 +83,8 @@ const Template = ({children}) => {
     id='transition-slide-out'
     className="transition-slide h-screen w-full fixed left-0 top-0 z-[3000] bg-yellow rounded-t-[15px] rounded-b-[15px] pointer-events-none">
       <div className="transition-slide-inner h-full w-full relative flex items-center justify-start pl-[3.5%]">
-        <div className="svg-rpper w-[150px] mob:w-[100px] h-[150px] mob:h-[100px] absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
-          <Svg fill={"#121212"} stroke={"#121212"} px={"1px"}/>
+      <div className="loader-wrapper absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
+          <div className="loader"></div>
         </div>
       </div>
     </div>
