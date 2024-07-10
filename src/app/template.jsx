@@ -72,7 +72,7 @@ const Template = ({children}) => {
             {pageName}
           </h1>
         </div>
-        <div className="loader-wrapper absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
+        <div className="loader-wrapper absolute right-[3.5%] tab:right-[6%] mob:right-[6%] bottom-[5vh] mob:bottom-[7vh]">
           <div className="loader"></div>
         </div>
       </div>
@@ -83,7 +83,7 @@ const Template = ({children}) => {
     id='transition-slide-out'
     className="transition-slide h-screen w-full fixed left-0 top-0 z-[3000] bg-yellow rounded-t-[15px] rounded-b-[15px] pointer-events-none">
       <div className="transition-slide-inner h-full w-full relative flex items-center justify-start pl-[3.5%]">
-      <div className="loader-wrapper absolute right-[3.5%] bottom-[5vh] mob:bottom-[7vh]">
+      <div className="loader-wrapper absolute right-[3.5%] tab:right-[6%] mob:right-[6%] bottom-[5vh] mob:bottom-[7vh]">
           <div className="loader"></div>
         </div>
       </div>

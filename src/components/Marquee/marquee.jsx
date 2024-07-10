@@ -12,28 +12,39 @@ const Marquee = () => {
   let inner = useRef(null)
   let elements = useRef([])
   let direction = 1;
+  let speed = 2;
+
+  useEffect(()=>{
+    if(window.innerWidth<=1024 && window.innerHeight<=800){
+        speed = 1.5;
+    }
+  })
+
+  useGSAP(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+
+    if(!(window.innerWidth<=576 && window.innerHeight<1000)){
+        ScrollTrigger.create({
+            trigger:"#main",
+            start:"top top",
+            end:"bottom bottom",
+            invalidateOnRefresh: true,
+            scrub: true,
+            // markers: true,
+            onUpdate: (e) => {
+                direction = e.direction
+            }
+        })
+    }
+  })
 
   useGSAP(() => {
-
-    gsap.registerPlugin(ScrollTrigger)
-    
-    ScrollTrigger.create({
-        trigger:"#main",
-        start:"top top",
-        end:"bottom bottom",
-        invalidateOnRefresh: true,
-        scrub: true,
-        // markers: true,
-        onUpdate: (e) => {
-            direction = e.direction
-        }
-    })
 
     let max = elements.current[0].getBoundingClientRect().width + window.innerWidth*0.02;
     let x = 0;
 
     const anim = () => {
-        x += direction*2
+        x += direction*speed;
         if(x>=max){
             x=0;
         }else if(x<= -1*max){

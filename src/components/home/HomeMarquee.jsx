@@ -22,18 +22,19 @@ const HomeMarquee = () => {
   useGSAP(()=>{
     gsap.registerPlugin(ScrollTrigger)
 
-    ScrollTrigger.create({
-        trigger:"#main",
-        start:"top top",
-        end:"bottom bottom",
-        invalidateOnRefresh: true,
-        scrub: true,
-        // markers: true,
-        onUpdate: (e) => {
-            direction = e.direction
-        }
-    }) 
-   
+    if(!(window.innerWidth<=576 && window.innerHeight<1000)){
+        ScrollTrigger.create({
+            trigger:"#main",
+            start:"top top",
+            end:"bottom bottom",
+            invalidateOnRefresh: true,
+            scrub: true,
+            // markers: true,
+            onUpdate: (e) => {
+                direction = e.direction
+            }
+        }) 
+    }
   })
 
   useGSAP(() => {
@@ -68,7 +69,7 @@ const HomeMarquee = () => {
   
   return (
     <>
-    <div className='home-marquee-wrapper overflow-hidden relative w-full pt-[7vh] pb-[5vh] tab:pb-[2vh] tab:pt-[3vh] mob:pt-[4vh] mob:pb-[2vh] bg-black pointer-events-none select-none'>
+    <div className='home-marquee-wrapper overflow-hidden relative w-full pt-[7vh] pb-[5vh] tab:pb-[2vh] tab:pt-[3vh] mob:pt-[4vh] mob:pb-[3vh] bg-black pointer-events-none select-none'>
         <div ref={inner} className="home-marquee-inner py-[5vh] mob:py-[4vh] bg-[#fff] border-y-[1px] border-y-[var(--bor)] w-full flex justify-center flex-shrink-0 gap-[3vw]">
             {
                 [...Array(3)].map((_, i) => {

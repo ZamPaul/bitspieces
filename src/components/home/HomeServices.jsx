@@ -143,12 +143,11 @@ const ServicesGallery = () => {
   )
 }
 
-
 const TopText = () => {
   return (
     <div className="services-top-info pb-[7vh] w-full flex flex-col justify-start">
       <p className='text-[3vw] tab:text-[4vw] mob:text-[7vw] leading-[1.35em]'>
-        We offer top-tier services in <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>art direction</span> and <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>custom props</span> that transform spaces and captivate <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>audiences</span>. Explore our versatile <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>offerings</span>, tailored to meet your every need.
+        We offer top-tier services in <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>art direction</span> and <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>custom props</span> that transform spaces and captivate <span className='text-[3vw] tab:text-[4vw] mob:text-[7vw] para-link'>audiences</span>.
       </p>
     </div>
   )
