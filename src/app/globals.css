@@ -158,10 +158,6 @@ main{
     .hero-content .content-inner .wrap{
         height: 7.8em;
     }
-    .menu-wrapper{
-        padding: 33px 33px;
-        padding-top: 53px;
-    }
     .contact-intro-inner .wrap:nth-child(1){
         height: 6em;
     }
@@ -176,10 +172,6 @@ main{
 @media (min-width:1700px) {
     .hero-content .content-inner .wrap{
         height: 8.2em;
-    }
-    .menu-wrapper{
-        padding: 36px 36px;
-        padding-top: 56px;
     }
     .contact-intro-inner .wrap:nth-child(1){
         height: 6.3em;
@@ -196,10 +188,6 @@ main{
     .hero-content .content-inner .wrap{
         height: 8.6em;
     }
-    .menu-wrapper{
-        padding: 39px 39px;
-        padding-top: 59px;
-    }
     .contact-intro-inner .wrap:nth-child(1){
         height: 6.6em;
     }
@@ -214,10 +202,6 @@ main{
 @media (min-width:1900px) {
     .hero-content .content-inner .wrap{
         height: 8.9em;
-    }
-    .menu-wrapper{
-        padding: 42px 42px;
-        padding-top: 62px;
     }
     .contact-intro-inner .wrap:nth-child(1){
         height: 6.9em;
@@ -323,10 +307,17 @@ main{
     }
 
     .menu-wrapper{
-        width: 30vw;
-        height: 33vw;
+        width: 34vw;
+        height: 40vw;
     }
 
+    .menu-wrapper .menu-links h2{
+        font-size: 2.6vw;
+    }
+
+    .menu-wrapper .menu-links .nav-heading h2{
+        font-size: 1vw;
+    }
 
 }
 
@@ -352,6 +343,7 @@ main{
 .services-right-wrap{
     width: calc(100% - 4vw);
 }
+
 
 @media (max-width:1024px) and (min-height:1000px) {
     .services-right-wrap{
@@ -390,11 +382,10 @@ main{
     top: calc(75% + 6.5vh);
 }
 
-@media (max-width:800px) and (min-height:1000px) {
+@media screen and (max-width:800px) and (min-height:1000px) {
     .testimonial-slider-wrapper .review-slide{
         height: 55vw;
         width: 48vw;
     }
 }
-
 

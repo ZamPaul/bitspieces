@@ -6,7 +6,7 @@ const urls = [
     "/work-event-management",
     "/work-art-department",
     "/work-advertisement",
-    "/services",
+    "/blog",
     "/about",
     "/rentals",
     "/contact",

@@ -13,6 +13,9 @@ module.exports = {
         },
         'mob': {
           raw: '(max-height:1000px) and (max-width:576px)'
+        },
+        'mini-tab':{
+          raw: '(min-height:1000px) and (max-width:800px)'
         }
       },
       backgroundImage: {

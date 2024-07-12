@@ -77,7 +77,7 @@ const Testimonials = () => {
 
   useEffect(()=>{
     if(dimensions.w<=1024 && dimensions.h>=1000){
-        setconstraints(-dimensions.w*2.7)
+        setconstraints(-dimensions.w*3)
     }else if(dimensions.w<=576 && dimensions.h<1000){
         setconstraints(-dimensions.w*6)
     }else{
@@ -86,7 +86,7 @@ const Testimonials = () => {
   },[dimensions])
 
   return (
-    <div className='testimonials-section relative bg-black z-[30] pt-[7vh] tab:pt-[2vh] pb-[20vh] tab:pb-[10vh] mob:pt-[3vh] mob:pb-[15vh] w-full pl-[3.5%]'>
+    <div className='testimonials-section relative bg-black z-[30] pt-[7vh] tab:pt-[2vh] pb-[20vh] tab:pb-[10vh] mob:pt-[2vh] mob:pb-[15vh] w-full pl-[3.5%]'>
       <TopText/>
       <div className="testimonials-inner relative w-full">
         <motion.div 

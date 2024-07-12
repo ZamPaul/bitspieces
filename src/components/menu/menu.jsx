@@ -17,8 +17,8 @@ const links = [
         href:"/work"
     },
     {
-        label:"Services",
-        href:"/services"
+        label:"Blog",
+        href:"/blog"
     },
     {
         label:"About",
@@ -62,6 +62,20 @@ const socialVariants = {
     })
 }
 
+const headingVariants = {
+    init:{
+        opacity:0,
+    },
+    enter:{
+        opacity:1,
+        transition:{delay:0.5,duration:.4,ease:[0.65, 0, 0.35, 1]}
+    },
+    exit:{
+        opacity:0,
+        transition:{duration:.4,ease:[0.65, 0, 0.35, 1]}
+    }
+}
+
 const Menu = () => {
 
   let pth = usePathname()
@@ -69,7 +83,6 @@ const Menu = () => {
   const dimensions = Getdimensions();
   
   const router = useRouter();
-
 
   return (
     <motion.div 
@@ -102,13 +115,18 @@ const Menu = () => {
     }}
     animate={"open"}
     exit={"exit"}
-    className='menu-wrapper bg-yellow flex flex-col items-start justify-between w-[25vw] tab:w-[30vh] mob:w-[95vw] h-[30vw] tab:h-[37vh] mob:h-[60vh] absolute right-0 top-0 py-[30px] pt-[50px] px-[30px] rounded-[20px]'>
+    className='menu-wrapper bg-yellow flex flex-col items-start justify-between w-[28vw] tab:w-[45vw] mini-tab:w-[50vw] mob:w-[95vw] h-[32vw] tab:h-[55vw] mini-tab:h-[60vw] mob:h-[125vw] absolute right-0 top-0 py-[30px] pt-[37px] pb-[40px] px-[40px] rounded-[20px]'>
       <div className="menu-links flex flex-col items-start gap-[5px]">
+        <motion.div variants={headingVariants} initial={"init"} animate="enter" exit={"exit"} className="nav-heading w-[170%] border-b-[1px] pb-[8px] mb-[1.2vw] tab:mb-[2.3vw] mob:mb-[5vw] border-b-[#1212126b]">
+            <h2 className='uppercase text-[#121212b2] text-[1vw] tab:text-[1.7vw] mob:text-[3.3vw] font-[900]'>
+                navigation
+            </h2>
+        </motion.div>
         {
             links.map((link,i)=>{
                 return (
                     <TransitionLink key={`Menu_link_${i}`} href={link.href} router={router} className={""}>
-                        <motion.h2 custom={i} initial={"init"} variants={linksVariants} animate={"enter"} exit={"exit"} className={`${pth == link.href ? "active-link": "link"} text-[2.2vw] tab:text-[2.6vh] mob:text-[8.4vw] font-[900] text-black leading-[1.2em]`}>
+                        <motion.h2 custom={i} initial={"init"} variants={linksVariants} animate={"enter"} exit={"exit"} className={`${pth == link.href ? "active-link": "link"} text-[2.2vw] tab:text-[3.8vw] mob:text-[8.4vw] font-[900] text-black leading-[1.2em]`}>
                             {link.label}
                         </motion.h2>
                     </TransitionLink>

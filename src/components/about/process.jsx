@@ -45,7 +45,7 @@ const Process = () => {
 
   useEffect(()=>{
     if(dimensions.w<=1024 && dimensions.h>=1000){
-        setconstraints(-dimensions.w*1.5)
+        setconstraints(-dimensions.w*1.8)
     }else if(dimensions.w<=576 && dimensions.h<1000){
         setconstraints(-dimensions.w*4)
     }else{
@@ -54,9 +54,9 @@ const Process = () => {
   },[dimensions])
 
   return (
-    <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[12vh] mob:py-[10vh] overflow-hidden bg-black flex justify-center'>
-        <div className="process-inner w-[93%] flex flex-col gap-[8vh] tab:gap-[5vh]">
-            <div className="process-title">
+    <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[10vh] mob:py-[13vh] mob:pt-[2vh] overflow-hidden bg-black flex justify-center'>
+        <div className="process-inner w-[93%] flex flex-col gap-[7vh] tab:gap-[5vh] mob:gap-[5vh]">
+            <div className="process-title flex justify-start pb-[5vh] tab:pb-[4.5vh] mob:pb-[4vh] border-b-[1px] border-b-[var(--bor)]">
                 <h1 className='text-[#fff] leading-[1.1em] tracking-[0px] text-[4vw] mob:text-[7vw]'>
                     Our Step-by-Step Approach
                 </h1>
@@ -91,7 +91,7 @@ const Slider = () => {
     return (
         slides.map( (slide, i) => {
             return (
-                <motion.div key={`Slide_${i}`} className="slide w-[32vw] tab:w-[40vw] mob:w-[93vw] h-[32vw] tab:h-[50vw] mob:h-[500px] relative flex-shrink-0">
+                <motion.div key={`Slide_${i}`} className="slide w-[32vw] tab:w-[45vw] mini-tab:w-[48vw] mob:w-[93vw] h-[32vw] tab:h-[50vw] mini-tab:h-[55vw] mob:h-[500px] relative flex-shrink-0">
                     <motion.div
                      variants={{
                         init:{
@@ -103,28 +103,27 @@ const Slider = () => {
                         }
                      }}
                      style={{backgroundColor:slide.bg}}
-                     className="slide-inner relative overflow-hidden w-full h-full px-[50px] tab:px-[45px] py-[50px] rounded-[15px] flex flex-col gap-[40px] tab:gap-[30px] mob:gap-[30px]">
+                     className="slide-inner relative overflow-hidden w-full h-full px-[45px] py-[45px] mob:px-[30px] rounded-[15px] flex flex-col justify-start gap-[3vw] tab:gap-[6vw] mob:gap-[10vw]">
 
                         <div className="back-svg absolute right-[-8vw] mob:right-[-25vw] bottom-[-8vw] mob:bottom-[-20vw] w-[30vw] tab:w-[35vw] mob:w-[100vw] h-[30vw] tab:h-[35vw] mob:h-[100vw]">
                             <Svg fill={slide.flag?"#12121230":"#ffffff10"} stroke={slide.flag?"#12121212":"#ffffff07"} px={"0.5px"}/>
                         </div>
                         <div className="title relative">
-                            <h2 className={`text-[18px] tab:text-[17px] uppercase tracking-[0.5px] font-[900] ${slide.flag ? "text-black": "text-[#fff]"}`}>
+                            <h2 className={`text-[17px] tab:text-[17px] uppercase tracking-[0.5px] font-[900] ${slide.flag ? "text-black": "text-[#fff]"}`}>
                                 {slide.title}
                             </h2>
                         </div>
-                        <div className="description w-full pr-[15px] tab:pr-[5px] mob:pr-[0px] relative">
+                        <div className="description relative w-full pr-[15px] tab:pr-[5px] mob:pr-[0px]">
                             <p className={`text-[1.6vw] tab:text-[2.4vw] mob:text-[25px] ${slide.flag ? "text-black": "text-[#fff]"}`}>
                                 {slide.desc}
                             </p>
                         </div>
-                        <div className="phase absolute left-[50px] bottom-[50px] tab:left-[45px]">
+                        <div className="phase absolute left-[45px] bottom-[45px]">
                             <h2 className={`text-[18px] tab:text-[18px] ${slide.flag ? "text-[#121212]": "text-[#ffffff95]"}`}>
                                 Phase {i+1}
                             </h2>
                         </div>
                         <Circle flag={slide.flag} style={{bottom:"45px",right:"45px"}}/>
-
                     </motion.div>
                 </motion.div>
             )
