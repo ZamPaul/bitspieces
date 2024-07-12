@@ -80,7 +80,7 @@ const HomeMarquee = () => {
                                     return (
                                         <div key={i} className="home-marquee-h1 flex items-center flex-shrink-0 gap-[3vw]">
                                             <div>
-                                                <img src={elem} alt="" className='object-cover w-[20vw] tab:w-[23vw] mob:w-[45vw] h-[9vw] tab:h-[11vw] mob:h-[25vw] rounded-[100px]' />
+                                                <img src={elem} alt="" className='object-cover w-[22vw] tab:w-[25vw] mob:w-[47vw] h-[11vw] tab:h-[13vw] mob:h-[27vw] rounded-[100px]' />
                                             </div>
                                             <h1 className='tracking-[0px] font-[100] uppercase font-[mon] text-[#121212] text-[6vw] leading-none mob:text-[12vw]'>
                                                 Bits & Pieces

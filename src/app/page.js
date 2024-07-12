@@ -7,6 +7,7 @@ import Work from '@/components/home/work'
 import HomeAboutSection from '@/components/home/HomeAboutSection'
 import HomeServiceSection from '@/components/home/HomeServices'
 import HomeMarquee from '@/components/home/HomeMarquee'
+import Testimonials from '@/components/Testimonials/Testimonials'
 
 const Page = () => {
   return (
@@ -16,6 +17,7 @@ const Page = () => {
     <HomeAboutSection/>
     <HomeServiceSection/>
     <Work/>
+    <Testimonials/>
     <div className='bg-[#F1F1F1]'>
         <Marquee/>
         <FooterTest/>

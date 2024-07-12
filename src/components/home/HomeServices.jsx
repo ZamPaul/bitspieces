@@ -55,7 +55,6 @@ const HomeServiceSection = () => {
 const ServicesGallery = () => {
   const bar = useRef(null)
   const gallery = useRef(null)
-  const galleryWrapper = useRef(null)
   const dotRefs = useRef([])
 
   useLayoutEffect(()=>{
@@ -70,17 +69,17 @@ const ServicesGallery = () => {
     dotRefs.current.forEach((elem,i)=>{
       ScrollTrigger.create({
         trigger:dotRefs.current[i],
-        start:"start 60%",
-        end:"start 60%",
+        start:"top 60%",
+        end:"top 60%",
         // markers: true,
         onLeave: function(){
           console.log('complete')
           glow(i)
         },
-        onLeaveBack: function(){
-          console.log('complete')
-          glow(i)
-        }
+        // onLeaveBack: function(){
+        //   console.log('complete')
+        //   glow(i)
+        // }
       })
     })
 

@@ -102,7 +102,7 @@ const FooterTest = () => {
                 <Right/>
             </div>
             <div className="footer-lower border-t-[1px] py-[4vh] mob:py-[3vh] border-t-[#00000075] w-[93%] mt-[6vh] mob:mt-[3vh] flex justify-between">
-                <h2 className='link text-black mob:text-[14px]'>
+                <h2 className='link text-black mob:text-[14px] mob:leading-none'>
                     {lowerText}
                 </h2>
                 <div className="links flex gap-[20px]">

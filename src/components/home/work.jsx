@@ -16,7 +16,7 @@ const Work = () => {
 const TextIntro = () => {
   return (
     <div className="text-info w-[93%] flex flex-col justify-start pb-[6vh] tab:pb-[4.5vh] mob:pb-[3vh] border-b-[1px] border-b-[var(--bor)]">
-      <p className='text-[3vw] font-[mon] tracking-[1px] leading-none mob:leading-[1.3em] uppercase tab:text-[4vw] mob:text-[7vw]'>
+      <p className='text-[3.5vw] tracking-[0px] leading-none mob:leading-[1.3em] tab:text-[4vw] mob:text-[7vw]'>
         Featured Projects
       </p>
     </div>

@@ -14,7 +14,7 @@ let slides = [
     {
         title:"Brainstorming",
         desc:"Our meticulous and creative process starts at this stage where we prove our unlimited creativity.",
-        bg:"#e0fd60f3",
+        bg:"var(--sliyellow)",
         flag:true,
     },
     {
@@ -57,8 +57,8 @@ const Process = () => {
     <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[12vh] mob:py-[10vh] overflow-hidden bg-black flex justify-center'>
         <div className="process-inner w-[93%] flex flex-col gap-[8vh] tab:gap-[5vh]">
             <div className="process-title">
-                <h1 className='text-[#fff] leading-[1.1em] tracking-[0px] uppercase text-[4.5vw] mob:text-[7vw] font-[mon]'>
-                    Our Step-by-Step<br/>Approach
+                <h1 className='text-[#fff] leading-[1.1em] tracking-[0px] text-[4vw] mob:text-[7vw]'>
+                    Our Step-by-Step Approach
                 </h1>
             </div>
             <div className="slider-wrapper w-full">
@@ -114,7 +114,7 @@ const Slider = () => {
                             </h2>
                         </div>
                         <div className="description w-full pr-[15px] tab:pr-[5px] mob:pr-[0px] relative">
-                            <p className={`text-[1.8vw] tab:text-[2.4vw] mob:text-[25px] ${slide.flag ? "text-black": "text-[#fff]"}`}>
+                            <p className={`text-[1.6vw] tab:text-[2.4vw] mob:text-[25px] ${slide.flag ? "text-black": "text-[#fff]"}`}>
                                 {slide.desc}
                             </p>
                         </div>
@@ -123,7 +123,7 @@ const Slider = () => {
                                 Phase {i+1}
                             </h2>
                         </div>
-                        <Circle flag={slide.flag}/>
+                        <Circle flag={slide.flag} style={{bottom:"45px",right:"45px"}}/>
 
                     </motion.div>
                 </motion.div>
@@ -132,9 +132,11 @@ const Slider = () => {
     )
 }
 
-export const Circle = ({flag}) => {
+export const Circle = ({flag, style}) => {
     return (
-        <div className={`circle ${flag?"bg-[var(--grey)]":"bg-[#121212]"} w-[40px] h-[40px] rounded-full absolute right-[50px] bottom-[40px] tab:right-[45px]`}>
+        <div
+         style={style}
+         className={`circle ${flag?"bg-[var(--grey)]":"bg-[#121212]"} w-[40px] h-[40px] rounded-full absolute tab:right-[45px]`}>
             <div className="circle-inner relative rotate-[0deg] rounded-full w-full h-full flex items-center justify-center overflow-hidden">
 
                 <motion.div 
