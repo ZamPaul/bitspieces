@@ -81,7 +81,7 @@ const Testimonials = () => {
     }else if(dimensions.w<=576 && dimensions.h<1000){
         setconstraints(-dimensions.w*6)
     }else{
-        setconstraints(-dimensions.w*2.5)
+        setconstraints(-dimensions.w*1.8)
     }
   },[dimensions])
 

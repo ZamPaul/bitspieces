@@ -297,6 +297,8 @@ main{
     .footer-cta-button h2{
         font-size: 15px;
     }
+
+    /* fixed about section process slides */
     .slide{
         height: 35vw;
         width: 35vw;
@@ -311,10 +313,21 @@ main{
     .slide .slide-inner .phase{
         bottom: 40px;
     }
+
+    /* fixed testimonials slides  */
+
+    .testimonial-slider-wrapper .review-slide{
+        padding: 40px 40px;
+        height: 35vw;
+        width: 35vw;
+    }
+
     .menu-wrapper{
         width: 30vw;
         height: 33vw;
     }
+
+
 }
 
 /* HTML: <div class="loader"></div> */
@@ -361,10 +374,6 @@ main{
     }
 }
 
-.home-services-section h1, .home-services-section p, .home-services-section h2 {
-    /* color: #121212; */
-}
-
 .bar .dot:nth-child(2){
     top: calc(0% + 8.5vh);
 }
@@ -379,6 +388,13 @@ main{
 
 .bar .dot:nth-child(5){
     top: calc(75% + 6.5vh);
+}
+
+@media (max-width:800px) and (min-height:1000px) {
+    .testimonial-slider-wrapper .review-slide{
+        height: 55vw;
+        width: 48vw;
+    }
 }
 
 
