@@ -204,3 +204,37 @@ function shuffleArray(array) {
 // Shuffle the combined array
 export const shuffledArray = shuffleArray(combinedArray);
 
+import img1 from "../../../public/assets/halloween.jpg"
+import img3 from "../../../public/assets/event/event8.webp"
+import img2 from "../../../public/rentals/music.webp"
+import img4 from "../../../public/assets/wooden_kitchen.jpg"
+import img5 from "../../../public/assets/product_photoshoot.jpg"
+
+export const faqs = [
+    {
+      query: "What types of events does Bits & Pieces specialize in managing?",
+      answer: "Bits & Pieces specializes in managing a wide range of events, including corporate conferences, product launches, trade shows, weddings, birthday parties, and private events. We also provide artist management for various types of events.",
+      img:img1
+    },
+    {
+      query: "What kind of rental equipment do you offer for events?",
+      answer: "We offer a comprehensive range of rental equipment, including event furniture, sports and games equipment, kids' party equipment, kitchen and crockery items, vintage props, Arabic items, tents and lighting, SFX machines, and musical instruments.",
+      img:img2
+    },
+    {
+      query: "How can I request a quote for your services?",
+      answer: "You can request a quote by visiting our website and filling out the contact form with your project details. Alternatively, you can reach out to us directly via email or phone, and our team will be happy to assist you.",
+      img:img3
+    },
+    {
+      query: "What advertising solutions does your department provide?",
+      answer: "Our Advertising Department provides a variety of solutions, including outdoor and indoor printing, offset printing, and signage design. We focus on creating impactful campaigns that effectively promote your brand.",
+      img:img4
+    },
+    {
+      query: "Can you create custom props for film and commercial sets?",
+      answer: "Yes, our Art Department excels in custom props fabrication for film, commercial, and stage sets. We work closely with clients to design and create unique props that perfectly match their vision and requirements.",
+      img:img5
+    }
+];
+

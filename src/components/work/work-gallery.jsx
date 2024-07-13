@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import DisplayGallery from './display-gallery'
 import GetUpperText from './getUpperText'
 import { findGallery } from '../hooks/data'
@@ -7,7 +7,6 @@ import { usePathname, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Pin from '../pin/pin'
 import TransitionLink from '../TransitionLink/TransitionLink'
-
 
 const WorkGallery = ({service}) => {
 

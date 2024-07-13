@@ -389,3 +389,8 @@ main{
     }
 }
 
+.accordions-wrapper .accordion-item:nth-child(5){
+    border-bottom: 1px solid var(--bor);
+}
+
+

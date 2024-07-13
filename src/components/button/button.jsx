@@ -11,13 +11,13 @@ const Button = ({value, href, keyPass}) => {
         <motion.div
         initial={'init'}
         whileHover={'hover'}
-        className='rounded-full border-[0.5px] border-[var(--bor)] bg-yellow flex items-center justify-between gap-[15px] px-[10px] pl-[20px] py-[5px]'>
+        className='rounded-full border-[0.5px] border-[var(--bor)] bg-yellow flex items-center justify-between gap-[15px] tab:gap-[12px] px-[10px] tab:px-[8px] pl-[20px] tab:pl-[18px] py-[5px] tab:py-[4px]'>
             <div className="text-wrap">
-                <h2 className='text-black font-[600]'>
+                <h2 className='text-black tab:text-[16px] font-[600]'>
                     {value}
                 </h2>
             </div>
-            <div className="circle bg-white w-[50px] h-[50px] rounded-full">
+            <div className="circle bg-white w-[50px] tab:w-[45px] h-[50px] tab:h-[45px] rounded-full">
                 <div className="circle-inner relative rotate-[-40deg] rounded-full w-full h-full flex items-center justify-center overflow-hidden">
 
                     <motion.div 
@@ -46,7 +46,7 @@ const Button = ({value, href, keyPass}) => {
                             // transition:{type:"spring"}
                         }
                     }}
-                    src={'./assets/arrow2.png'} alt="" className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] h-[20px]' style={{filter:"invert(1)"}} />
+                    src={'./assets/arrow2.png'} alt="" className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] tab:w-[17px] h-[20px] tab:h-[17px]' style={{filter:"invert(1)"}} />
 
                     <motion.img 
                     variants={{

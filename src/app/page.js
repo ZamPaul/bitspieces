@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FooterTest from '@/components/footer/footerTest'
 import Hero from '@/components/home/hero'
 import Marquee from '@/components/Marquee/marquee'
@@ -8,6 +8,7 @@ import HomeAboutSection from '@/components/home/HomeAboutSection'
 import HomeServiceSection from '@/components/home/HomeServices'
 import HomeMarquee from '@/components/home/HomeMarquee'
 import Testimonials from '@/components/Testimonials/Testimonials'
+import FAQS from '@/components/FAQS/FAQS'
 
 const Page = () => {
   return (
@@ -18,6 +19,7 @@ const Page = () => {
     <HomeServiceSection/>
     <Work/>
     <Testimonials/>
+    <FAQS/>
     <div className='bg-[#F1F1F1]'>
         <Marquee/>
         <FooterTest/>

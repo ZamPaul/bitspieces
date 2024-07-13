@@ -27,9 +27,9 @@ const Marquee = () => {
         ScrollTrigger.create({
             trigger:"#main",
             start:"top top",
-            end:"bottom bottom",
+            end:"150% bottom",
             invalidateOnRefresh: true,
-            scrub: true,
+            // scrub: true,
             // markers: true,
             onUpdate: (e) => {
                 direction = e.direction

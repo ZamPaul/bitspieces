@@ -86,7 +86,7 @@ const Testimonials = () => {
   },[dimensions])
 
   return (
-    <div className='testimonials-section relative bg-black z-[30] pt-[7vh] tab:pt-[2vh] pb-[20vh] tab:pb-[10vh] mob:pt-[2vh] mob:pb-[15vh] w-full pl-[3.5%]'>
+    <div className='testimonials-section relative bg-black z-[30] pt-[7vh] tab:pt-[2vh] pb-[20vh] tab:pb-[8vh] mob:pt-[2vh] mob:pb-[15vh] w-full pl-[3.5%]'>
       <TopText/>
       <div className="testimonials-inner relative w-full">
         <motion.div 

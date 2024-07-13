@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import React, { forwardRef } from 'react'
+import Image from 'next/image'
 
 const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
 
@@ -69,9 +70,8 @@ const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
                         transition:{duration:.5,ease:[0.65, 0, 0.35, 1],delay:0}
                     }
                 }}
-                src={src} 
-                alt=""
-                className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[0px] w-full h-full object-cover'
+                src={src}
+                className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover'
             />
     
         </motion.div>

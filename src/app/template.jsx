@@ -14,7 +14,7 @@ const Template = ({children}) => {
     gsap.registerPlugin(ScrollTrigger)
 
     const lenis = new Lenis({
-      lerp:0.1
+      lerp:0.1,
     })
 
     // function raf(time) {
