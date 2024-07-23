@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {motion} from "framer-motion"
 import Svg from '../svg/svg'
 import Getdimensions from '../hooks/getdimensions'
+import { Cursor } from '../Cursor/cursor'
 
 let slides = [
     {
@@ -52,6 +53,8 @@ const Process = () => {
         setconstraints(-dimensions.w)
     }
   },[dimensions])
+
+  Cursor(".slider-wrapper", "Drag")
 
   return (
     <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[10vh] mob:py-[13vh] mob:pt-[2vh] overflow-hidden bg-black flex justify-center'>

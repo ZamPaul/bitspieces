@@ -115,6 +115,7 @@ const ServicesGallery = () => {
           [...Array(4)].map((_, i)=>{
             return (
               <div
+               key={`Bar_dot_services${i}`}
                className="dot absolute flex items-center justify-center left-1/2 -translate-x-1/2 top-0 w-[10px] h-[10px] rounded-full">
                 <div className="dot-inner relative w-full h-full">
                   <div ref={ref => dotRefs.current[i] = ref} className="glow-back absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40px] h-[40px] scale-0 bg-[#ffffff9c] rounded-full">

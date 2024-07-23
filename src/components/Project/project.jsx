@@ -55,10 +55,11 @@ const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
                 },
                 hover:{
                     scale: 0.95,
-                    transition:{duration:.5,ease:[0.65, 0, 0.35, 1]}
+                    // transition:{duration:.5,ease:[0.65, 0, 0.35, 1]}
                 },
             }}
-            className='project-image relative w-[43vw] mob:w-[93vw] h-[35vw] mob:h-[80vw] rounded-[10px] overflow-hidden'>
+            transition={{type:"keyframes",ease:"linear"}}
+            className='project-image pointer-events-none select-none relative w-[43vw] mob:w-[93vw] h-[35vw] tab:h-[38vw] mob:h-[80vw] rounded-[10px] overflow-hidden'>
 
             <motion.img
                 variants={{
@@ -67,9 +68,10 @@ const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
                     },
                     hover:{
                         transform:"translate(-50%,-50%) scale(1.2)",
-                        transition:{duration:.5,ease:[0.65, 0, 0.35, 1],delay:0}
+                        // transition:{duration:.5,ease:[0.65, 0, 0.35, 1],delay:0}
                     }
                 }}
+                transition={{type:"keyframes",ease:"linear"}}
                 src={src}
                 className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover'
             />
@@ -78,7 +80,7 @@ const Project = forwardRef(({title ,subTitle, keyValue, key ,src}, ref) => {
 
         <div className="project-text w-full flex flex-col">
             <div className="project-upper-heading w-full border-b-[0.1px] pb-[25px] tab:pb-[17px] mob:pb-[20px] border-b-[var(--bor)]">
-            <h1 className='text-[1.7vw] uppercase mob:text-[4.2vw] font-[mon] tracking-[0px]'>
+            <h1 className='text-[1.7vw] tab:text-[2vw] uppercase mob:text-[4.2vw] font-[mon] tracking-[0px]'>
                 {title}
             </h1>
             </div>

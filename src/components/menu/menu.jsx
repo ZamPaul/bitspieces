@@ -115,7 +115,7 @@ const Menu = () => {
     }}
     animate={"open"}
     exit={"exit"}
-    className='menu-wrapper bg-yellow flex flex-col items-start justify-between w-[28vw] tab:w-[45vw] mini-tab:w-[50vw] mob:w-[95vw] h-[32vw] tab:h-[55vw] mini-tab:h-[60vw] mob:h-[125vw] absolute right-0 top-0 py-[30px] pt-[37px] pb-[40px] px-[40px] rounded-[20px]'>
+    className='menu-wrapper flex flex-col bg-yellow items-start justify-between w-[28vw] tab:w-[45vw] mini-tab:w-[50vw] mob:w-[95vw] h-[32vw] tab:h-[55vw] mini-tab:h-[60vw] mob:h-[125vw] absolute right-0 top-0 py-[30px] pt-[37px] pb-[40px] px-[40px] rounded-[20px]'>
       <div className="menu-links flex flex-col items-start gap-[5px]">
         <motion.div variants={headingVariants} initial={"init"} animate="enter" exit={"exit"} className="nav-heading w-[170%] border-b-[1px] pb-[8px] mb-[1.2vw] tab:mb-[2.3vw] mob:mb-[5vw] border-b-[#1212126b]">
             <h2 className='uppercase text-[#121212b2] text-[1vw] tab:text-[1.7vw] mob:text-[3.3vw] font-[900]'>

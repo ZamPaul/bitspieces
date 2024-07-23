@@ -204,11 +204,11 @@ function shuffleArray(array) {
 // Shuffle the combined array
 export const shuffledArray = shuffleArray(combinedArray);
 
-import img1 from "../../../public/assets/halloween.jpg"
-import img3 from "../../../public/assets/event/event8.webp"
-import img2 from "../../../public/rentals/music.webp"
-import img4 from "../../../public/assets/wooden_kitchen.jpg"
-import img5 from "../../../public/assets/product_photoshoot.jpg"
+import img3 from "../../../public/assets/halloween.webp"
+import img1 from "../../../public/assets/event/event6.webp"
+import img2 from "../../../public/rentals/musickeyboard.webp"
+import img4 from "../../../public/assets/ad/ad2.webp"
+import img5 from "../../../public/fabricationunit.webp"
 
 export const faqs = [
     {

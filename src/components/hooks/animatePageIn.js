@@ -13,7 +13,7 @@ const animatePageIn = () => {
     const tl = gsap.timeline()
     
     tl.set(slideIn,{ clipPath:"polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)" })
-    .to("#transition-slide-in h1",{
+    .to("#transition-slide-in .transition-slide-inner .h1-outer .h1-front",{
         top:"0%",
         ease:"power1.inOut",
         duration:.4,

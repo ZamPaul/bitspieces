@@ -95,8 +95,8 @@ const FooterTest = () => {
      style={{
         clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
      }}
-     ref={outer} className="footer-outer w-full relative">
-        <footer ref={footer} className='footer w-full fixed mob:relative z-[20] bottom-0 bg-[#F1F1F1] pt-[18vh] tab:pt-[10vh] mob:pt-[10vh] flex flex-col items-center justify-center'>
+     ref={outer} className="footer-outer w-full">
+        <footer ref={footer} className='footer w-full fixed z-[20] mob:relative bottom-0 bg-[#F1F1F1] pt-[18vh] tab:pt-[10vh] mob:pt-[10vh] flex flex-col items-center justify-center'>
             <div className="footer-upper w-[93%] flex justify-between mob:flex-col mob:gap-[6vw]">
                 <Left/>
                 <Right/>
@@ -108,7 +108,7 @@ const FooterTest = () => {
                 <div className="links flex gap-[20px]">
                     {
                         lowerLinks.map( (link,i) => 
-                            <FooterLowerLink value={link.value} href={link.href} keyPass={`Footer_lower_link_${i}`}/>
+                            <FooterLowerLink key={`footer_link_${i}`} value={link.value} href={link.href} keyPass={`Footer_lower_link_${i}`}/>
                         )
                     }
                 </div>

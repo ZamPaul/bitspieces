@@ -42,7 +42,7 @@ let array = [
   {
     title:"Sports & Games",
     subTitle:"Rentals",
-    src:"./assets/work/work4.webp"
+    src:"./rentals/basketball.webp"
   }
 ]
 

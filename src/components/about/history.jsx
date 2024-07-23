@@ -30,11 +30,11 @@ const History = () => {
             <div className="lower bg-black w-full relative flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)]">
                 <div className="left w-1/2 mob:w-full">
                     <div ref={img} className="pin-wrapper relative flex flex-col items-start gap-[20px]">
-                        <div className="image-wrap rounded-[10px] w-[30vw] mob:w-[93vw] h-[30vw] mob:h-[40vh] overflow-hidden">
-                            <img src="./assets/art/art14.webp" alt="image" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                        <div className="image-wrap rounded-[10px] w-[33vw] mob:w-[93vw] h-[25vw] mob:h-[40vh] overflow-hidden">
+                            <img src="./vehicle_desert_shoot.webp" alt="image" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
                         </div>
-                        <p className="">
-                            Human Billiard Table - Fabrication
+                        <p className="text-[#fffd]">
+                            Vehicle Desert Shoot - SFX
                         </p>
                     </div>
                 </div>

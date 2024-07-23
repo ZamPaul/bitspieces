@@ -57,10 +57,7 @@ const Header = () => {
     <header className='header flex justify-center pointer-events-none z-[1000] fixed w-[93%] mob:w-[90%] left-1/2 -translate-x-1/2 top-[5vh] tab:top-[2.5vh] mob:top-[4vh]'>
         <div className="header-inner w-full relative flex items-center justify-between">
             <div
-            style={{
-              pointerEvents:"all"
-            }} 
-            ref={outer} className="logo-outer relative overflow-hidden">
+            ref={outer} className="logo-outer relative pointer-events-none overflow-hidden">
                 <LogoLink href={"/"} ref={svgLink}>
                   <div className="flex items-center">
                     <div className="logo-svg w-[70px] h-[70px] mob:w-[80px] mob:h-[80px]">
@@ -92,7 +89,7 @@ const LogoLink = forwardRef( ( {children, href}, ref ) => {
   }
 
   return (
-    <Link ref={ref} href={href} onClick={click} className='logo relative -left-[10px]'>
+    <Link style={{pointerEvents:"all"}} ref={ref} href={href} onClick={click} className='logo relative -left-[10px]'>
       {children}
     </Link>
   )

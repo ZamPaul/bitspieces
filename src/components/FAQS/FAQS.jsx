@@ -1,9 +1,14 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef, useState } from 'react'
 import { faqs } from '../hooks/data'
 import Accordion from './accordion'
 import Button from '../button/button'
+import gsap from 'gsap'
 
-const FAQS = ({}) => {
+const FAQS = () => {
+
+  const accordions = useRef([])
+
   return (
     <div className='faqs-section z-[30] bg-black w-full flex justify-center relative pt-[5vh] mob:pt-[2vh] pb-[20vh] tab:pb-[10vh] mob:pb-[15vh]'>
       <div className="faqs-inner w-[93%] flex flex-col justify-center items-center">
@@ -12,7 +17,7 @@ const FAQS = ({}) => {
             {
                 faqs.map((faq,i)=>{
                     return (
-                        <Accordion img={faq.img} num={i} query={faq.query} answer={faq.answer} key={`FAQ_${i}`}/>
+                        <Accordion ref={accordions} img={faq.img} num={i} query={faq.query} answer={faq.answer} key={`FAQ_${i}`}/>
                     )
                 })
             }

@@ -1,10 +1,12 @@
+"use client"
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect, useRef } from 'react'
+import React, { Suspense, useEffect, useRef } from 'react'
+import VideoComponent from './VideoComponent';
 gsap.registerPlugin(ScrollTrigger)
 
-const imgs = ["./vehicle_desert_shoot.jpg","./desert_bonfire.jpg","./crew.jpg"]
+const values = ["teamwork","integrity","Creativity","Commitment","Timely Delivery"]
 
 const HomeMarquee = () => {
 
@@ -20,7 +22,7 @@ const HomeMarquee = () => {
   })
 
   useGSAP(()=>{
-    gsap.registerPlugin(ScrollTrigger)
+    // gsap.registerPlugin(ScrollTrigger)
 
     if(!(window.innerWidth<=576 && window.innerHeight<1000)){
         ScrollTrigger.create({
@@ -33,16 +35,17 @@ const HomeMarquee = () => {
             onUpdate: (e) => {
                 direction = e.direction
             }
-        }) 
+        })
     }
   })
 
   useGSAP(() => {
-
-    let max = elements.current[0].getBoundingClientRect().width + window.innerWidth*0.03;
+     
+    let gap = window.innerWidth<=576 ? window.innerWidth*0.06 : window.innerWidth*0.03
+    let max = elements.current[0].getBoundingClientRect().width + gap;
     let x = 0;
 
-    const anim = () => {
+    const animateX = () => {
         x += direction*speed
         if(x>=max){
             x=0;
@@ -57,33 +60,32 @@ const HomeMarquee = () => {
             })
         }
         if(inner.current){
-            requestAnimationFrame(anim)
+            requestAnimationFrame(animateX)
         }
     }
 
     if(inner.current){
-        requestAnimationFrame(anim)
+        requestAnimationFrame(animateX)
     }
 
   })
   
   return (
     <>
-    <div className='home-marquee-wrapper overflow-hidden relative w-full pt-[7vh] pb-[5vh] tab:pb-[2vh] tab:pt-[3vh] mob:pt-[4vh] mob:pb-[3vh] bg-black pointer-events-none select-none'>
-        <div ref={inner} className="home-marquee-inner py-[5vh] mob:py-[4vh] bg-[#fff] border-y-[1px] border-y-[var(--bor)] w-full flex justify-center flex-shrink-0 gap-[3vw]">
+    <div className='home-marquee-wrapper relative w-full pt-[7vh] pb-[5vh] tab:pb-[2vh] tab:pt-[3vh] mob:pt-[4vh] mob:pb-[3vh] bg-black pointer-events-none select-none'>
+        <div className="home-marquee border-y-[var(--bor)] border-y-[0.1px] w-full overflow-hidden bg-white rounded-[20px]">
+            <div ref={inner} className="home-marquee-inner py-[7vh] tab:py-[5vh] mob:py-[6vh] w-full flex justify-center flex-shrink-0 gap-[3vw] mob:gap-[6vw]">
             {
                 [...Array(3)].map((_, i) => {
                     return (
-                        <div key={i} ref={ref => elements.current[i] = ref} className="home-marquee-element flex-shrink-0 flex gap-[3vw]">
+                        <div key={i} ref={ref => elements.current[i] = ref} className="home-marquee-element flex-shrink-0 flex gap-[3vw] mob:gap-[6vw]">
                             {
-                                imgs.map( (elem, i) => {
+                                values.map( (elem, i) => {
                                     return (
-                                        <div key={i} className="home-marquee-h1 flex items-center flex-shrink-0 gap-[3vw]">
-                                            <div>
-                                                <img src={elem} alt="" className='object-cover w-[22vw] tab:w-[25vw] mob:w-[47vw] h-[11vw] tab:h-[13vw] mob:h-[27vw] rounded-[100px]' />
-                                            </div>
-                                            <h1 className='tracking-[0px] font-[100] uppercase font-[mon] text-[#121212] text-[6vw] leading-none mob:text-[12vw]'>
-                                                Bits & Pieces
+                                        <div key={i} className="home-marquee-h1 flex items-center flex-shrink-0 gap-[3vw] mob:gap-[6vw]">
+                                            <VideoComponent/>
+                                            <h1 className='tracking-[0px] font-[100] font-[mon] uppercase text-[#121212] text-[6.5vw] leading-none mob:text-[12vw]'>
+                                                {elem}
                                             </h1>
                                         </div>
                                     )
@@ -93,6 +95,7 @@ const HomeMarquee = () => {
                     )
                 })
             }
+            </div>
         </div>
     </div>
     </>

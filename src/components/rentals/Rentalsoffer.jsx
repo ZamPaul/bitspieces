@@ -81,6 +81,4 @@ const RentalOfferLower = () => {
     )
 }
 
-
-
 export default Rentalsoffer
