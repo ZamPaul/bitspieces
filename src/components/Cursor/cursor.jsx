@@ -122,24 +122,28 @@ const Cursor = ({ scaleUpDiv, moveDiv, text }) => {
 
     section.forEach((section) => {
       section.addEventListener("mouseenter", () => {
-        // setIsHovered(true)
-        scaleCursorText(1)
+        if(window.innerWidth>1000 && window.innerHeight<1000){
+          scaleCursorText(1)
+        }
       });
       section.addEventListener("mouseleave", () => { 
-        // setIsHovered(false)
-        scaleCursorText(0)
+        if(window.innerWidth>1000 && window.innerHeight<1000){
+          scaleCursorText(0)
+        }
       });
     }); 
 
     return () => {
       section.forEach((section) => {
         section.removeEventListener("mouseenter", () => { 
-          // setIsHovered(true)
-          scaleCursorText(1)
+          if(window.innerWidth>1000 && window.innerHeight<1000){
+            scaleCursorText(1)
+          }
         });
         section.removeEventListener("mouseleave", () => { 
-          // setIsHovered(false)
-          scaleCursorText(0)
+          if(window.innerWidth>1000 && window.innerHeight<1000){
+            scaleCursorText(0)
+          }
         });
       });
     };
