@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Slide from "./slide";
 import { motion } from "framer-motion";
 import Getdimensions from "../hooks/getdimensions";
-import { Cursor } from "../Cursor/cursor";
+import Cursor from "../Cursor/cursor";
 
 const testimonials = [
   {
@@ -79,6 +79,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+
   const dimensions = Getdimensions();
 
   const [constraints, setconstraints] = useState(0);
@@ -93,9 +94,8 @@ const Testimonials = () => {
     }
   }, [dimensions]);
 
-  Cursor(".testimonials-inner", "Drag")
-
   return (
+    <>
     <div className="testimonials-section relative bg-black z-[30] pt-[7vh] tab:pt-[2vh] pb-[20vh] tab:pb-[8vh] mob:pt-[2vh] mob:pb-[15vh] w-full pl-[3.5%]">
       <TopText />
       <div className="testimonials-inner relative w-full">
@@ -112,7 +112,7 @@ const Testimonials = () => {
               cursor: "grabbing",
             },
           }}
-          className="testimonial-slider-wrapper flex-shrink-0 flex items-start gap-[4vw] mob:gap-[7vw]"
+          className="testimonial-slider-wrapper w-fit flex-shrink-0 flex items-start gap-[4vw] mob:gap-[7vw]"
         >
           {
             testimonials.map((slide, i) => {
@@ -132,6 +132,8 @@ const Testimonials = () => {
         </motion.div>
       </div>
     </div>
+    <Cursor scaleUpDiv={".testimonial-slider-wrapper"} moveDiv={".testimonials-section"} text={"Drag"}/>
+    </>
   );
 };
 

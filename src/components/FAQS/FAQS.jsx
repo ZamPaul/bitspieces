@@ -1,9 +1,8 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { faqs } from '../hooks/data'
 import Accordion from './accordion'
 import Button from '../button/button'
-import gsap from 'gsap'
 
 const FAQS = () => {
 

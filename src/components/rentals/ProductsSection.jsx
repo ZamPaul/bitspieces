@@ -2,15 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { productCards } from "./data";
 import ProductCard from "./ProductCard";
-import { Cursor } from "../Cursor/cursor";
 import PopupOverlay from "../PopUpOverlay/PopupOverlay";
 import CardPopup2 from "./CardPopup2";
 import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
+import Cursor from "../Cursor/cursor";
 
 const ProductsSection = () => {
-
-  Cursor(".product-card", "Details")
 
   const [selected, setSelected] = useState(null)
 
@@ -56,6 +54,7 @@ const ProductsSection = () => {
     <AnimatePresence mode="wait">
       {selected && <CardPopup2 setSelected={setSelected} img={selected.src} name={selected.name} description={selected.detailedDescription} usage={selected.usage} related={selected.relatedProducts}/>}
     </AnimatePresence>
+    <Cursor scaleUpDiv={".product-card"} moveDiv={".rental-products-section"} text={"Details"}/>
     </>
   );
 };

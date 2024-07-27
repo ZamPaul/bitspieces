@@ -11,6 +11,7 @@ import Testimonials from '@/components/Testimonials/Testimonials'
 import FAQS from '@/components/FAQS/FAQS'
 
 const Page = () => {
+
   return (
     <>
     <Hero/>

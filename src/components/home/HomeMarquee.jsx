@@ -2,7 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { Suspense, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import VideoComponent from './VideoComponent';
 gsap.registerPlugin(ScrollTrigger)
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {motion} from "framer-motion"
 import Svg from '../svg/svg'
 import Getdimensions from '../hooks/getdimensions'
-import { Cursor } from '../Cursor/cursor'
+import Cursor from '../Cursor/cursor'
 
 let slides = [
     {
@@ -53,10 +53,9 @@ const Process = () => {
         setconstraints(-dimensions.w)
     }
   },[dimensions])
-
-  Cursor(".slider-wrapper", "Drag")
-
+  
   return (
+    <>
     <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[10vh] mob:py-[13vh] mob:pt-[2vh] overflow-hidden bg-black flex justify-center'>
         <div className="process-inner w-[93%] flex flex-col gap-[7vh] tab:gap-[5vh] mob:gap-[5vh]">
             <div className="process-title flex justify-start pb-[5vh] tab:pb-[4.5vh] mob:pb-[4vh] border-b-[1px] border-b-[var(--bor)]">
@@ -78,12 +77,14 @@ const Process = () => {
                         cursor:"grabbing"
                     }
                  }}
-                 className="slider-inner flex items-center justify-start gap-[4vw] mob:gap-[7vw] flex-shrink-0">
+                 className="slider-inner w-fit flex items-center justify-start gap-[4vw] mob:gap-[7vw] flex-shrink-0">
                     <Slider/>
                 </motion.div>
             </div>
         </div>
     </div>
+    <Cursor moveDiv={".process"} scaleUpDiv={".process-inner .slider-wrapper .slider-inner"} text={"Drag"}/>
+    </>
   )
 }
 
@@ -102,9 +103,9 @@ const Slider = () => {
                         },
                         tap:{
                             scale: 0.9,
-                            transition:{ease:[0.33, 1, 0.68, 1],duration:0.4}
                         }
                      }}
+                     transition={{type:"keyframes",ease:"linear"}}
                      style={{backgroundColor:slide.bg}}
                      className="slide-inner relative overflow-hidden w-full h-full px-[45px] py-[45px] mob:px-[30px] rounded-[15px] flex flex-col justify-start gap-[3vw] tab:gap-[6vw] mob:gap-[10vw]">
 

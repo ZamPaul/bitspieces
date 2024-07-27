@@ -1,18 +1,29 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import animatePageIn from '@/components/hooks/animatePageIn'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { getPageName } from '@/components/hooks/getPageName'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ReactLenis, useLenis } from 'lenis/react'
-import Lenis from 'lenis'
+import { usePathname } from 'next/navigation'
+import Loader from '@/components/Loader/Loader'
+import { LoadContext } from '@/components/LoadContext/LoadContext'
 
 const Template = ({children}) => {
 
   // const lenis = useLenis(({ scroll }) => {
   //   // called every scroll
   // })
+
+  const { firstLoad, setFirstLoad, heroGraphicDelay, setHeroGraphicDelay } = useContext(LoadContext)
+
+  useLayoutEffect(()=>{
+    if(pathname!=="/"){
+      setFirstLoad(false)
+      setHeroGraphicDelay(1.2)
+    }
+  },[])
 
   useEffect(()=>{
 
@@ -46,6 +57,8 @@ const Template = ({children}) => {
   useGSAP(()=>{
     animatePageIn();
   })
+
+  const pathname = usePathname()
 
   const h1ref = useRef(null)
 
@@ -92,7 +105,7 @@ const Template = ({children}) => {
         </div>
       </div>
     </div>
-
+    {firstLoad && <Loader/>}
     </>
   )
 }

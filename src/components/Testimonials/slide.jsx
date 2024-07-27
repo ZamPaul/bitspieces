@@ -12,9 +12,9 @@ const Slide = ({review, flag, color, name, occupation, key, date}) => {
         },
         tap:{
             scale:0.9,
-            transition:{ease:[0.33, 1, 0.68, 1],duration:0.4},
         }
      }}
+     transition={{type:"keyframes",ease:"linear"}}
      style={{
         backgroundColor:color
      }}

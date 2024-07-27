@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from '@/components/button/button'
 import Pin from '../pin/pin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react'
 import Getdimensions from '../hooks/getdimensions'
 import gsap from 'gsap'
 import bezier from 'bezier-easing'
+import { LoadContext } from '../LoadContext/LoadContext'
 
 const Hero = () => {
 
@@ -109,6 +110,8 @@ export const Graphic = ({w, h}) => {
 
     const dimensions = Getdimensions();
 
+    const {firstLoad, setFirstLoad, heroGraphicDelay, setHeroGraphicDelay} = useContext(LoadContext)
+
     const ese = bezier(0.83, 0, 0.17, 1)
 
     useGSAP(()=>{
@@ -119,13 +122,13 @@ export const Graphic = ({w, h}) => {
             },
             {
               clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
-              delay: 1.2, 
+              delay: heroGraphicDelay, 
               duration: 1.2, 
               ease: ese
             }
           )
         }
-    },[dimensions])
+    },[dimensions, heroGraphicDelay])
 
     return (
         <div
@@ -190,13 +193,15 @@ export const Reveal = ({children, x}) => {
 
     const dimensions = Getdimensions();
 
+    const {firstLoad, setFirstLoad, heroGraphicDelay, setHeroGraphicDelay} = useContext(LoadContext)
+
     const ese = bezier(0.83, 0, 0.17, 1)
 
     useGSAP(()=>{
         if(dimensions.w>=576){
-            gsap.fromTo(".reveal-text",{x:x}, {x:0, delay:1.2, duration:1.2, ease:ese})
+            gsap.fromTo(".reveal-text",{x:x}, {x:0, delay:heroGraphicDelay, duration:1.2, ease:ese})
         }
-    },[dimensions])
+    },[dimensions, heroGraphicDelay])
     
     return (
         <div className="reveal-text">
