@@ -96,7 +96,7 @@ const FooterTest = () => {
         clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
      }}
      ref={outer} className="footer-outer w-full">
-        <footer ref={footer} className='footer w-full fixed z-[20] mob:relative bottom-0 bg-[#F1F1F1] pt-[18vh] tab:pt-[10vh] mob:pt-[10vh] flex flex-col items-center justify-center'>
+        <footer ref={footer} className='footer w-full fixed z-[20] mob:relative bottom-0 bg-[#fff] pt-[18vh] tab:pt-[10vh] mob:pt-[10vh] flex flex-col items-center justify-center'>
             <div className="footer-upper w-[93%] flex justify-between mob:flex-col mob:gap-[6vw]">
                 <Left/>
                 <Right/>

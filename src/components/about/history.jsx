@@ -1,6 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
 import Pin from '../pin/pin'
+import Button from '../button/button'
 
 const paras = [
     "Bits & Pieces is a Dubai based professional and leading Art Department company in commercial and film industry. Since its humble beginnings, it has established a reputation as the go-to art direction and props construction master with all the well-known and prominent agencies and directors in the UAE and other countries. Our team of talented, results-oriented, dedicated, and passionate staff makes the craft we deliver more impactful.",
@@ -28,17 +29,7 @@ const History = () => {
                 </div>
             </Pin>
             <div className="lower bg-black w-full relative flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)]">
-                <div className="left w-1/2 mob:w-full">
-                    <div ref={img} className="pin-wrapper relative flex flex-col items-start gap-[20px]">
-                        <div className="image-wrap rounded-[10px] w-[33vw] mob:w-[93vw] h-[25vw] mob:h-[40vh] overflow-hidden">
-                            <img src="./vehicle_desert_shoot.webp" alt="image" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
-                        </div>
-                        <p className="text-[#fffd]">
-                            Vehicle Desert Shoot - SFX
-                        </p>
-                    </div>
-                </div>
-                <div className="right w-1/2 mob:w-full flex flex-col gap-[3vh] mob:mt-[4vh]">
+                <div className="right w-2/3 mob:w-full flex flex-col gap-[3vh] mob:mt-[4vh]">
                     {
                         paras.map((value, i) => {
                             return (
@@ -49,6 +40,9 @@ const History = () => {
                             
                         })
                     }
+                </div>
+                <div className="about-buttons-wrapper flex flex-col items-end gap-[1vw]">
+                    <Button href={"/work"} value={"Our Works"}/>
                 </div>
             </div>
         </div>

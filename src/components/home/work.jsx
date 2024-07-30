@@ -16,7 +16,7 @@ const Work = () => {
 const TextIntro = () => {
   return (
     <div className="text-info w-[93%] flex flex-col justify-start pb-[6vh] tab:pb-[4.5vh] mob:pb-[3vh] border-b-[1px] border-b-[var(--bor)]">
-      <p className='text-[3.5vw] tracking-[0px] leading-none mob:leading-[1.3em] tab:text-[4vw] mob:text-[7vw]'>
+      <p className='text-[2.6vw] font-[mon] tracking-[1px] uppercase leading-none mob:leading-[1.3em] tab:text-[3.5vw] mob:text-[6vw]'>
         Featured Projects
       </p>
     </div>
@@ -51,7 +51,7 @@ const Gallery = () => {
   const projects = useRef([])
   
   return (
-    <div className="gallery-wrapper w-[93%] flex flex-wrap justify-between items-center gap-y-[6vh]">
+    <div className="gallery-wrapper w-[93%] flex flex-wrap justify-between items-center gap-y-[10vh] tab:gap-y-[5vh] mob:gap-y-[6vh]">
       {
         array.map( (elem, i) => {
           return (

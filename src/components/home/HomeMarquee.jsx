@@ -73,7 +73,7 @@ const HomeMarquee = () => {
   return (
     <>
     <div className='home-marquee-wrapper relative w-full pt-[7vh] pb-[5vh] tab:pb-[2vh] tab:pt-[3vh] mob:pt-[4vh] mob:pb-[3vh] bg-black pointer-events-none select-none'>
-        <div className="home-marquee border-y-[var(--bor)] border-y-[0.1px] w-full overflow-hidden bg-white rounded-[20px]">
+        <div className="home-marquee border-y-[var(--bor)] border-y-[0.1px] w-full overflow-hidden bg-[#fff] rounded-[20px]">
             <div ref={inner} className="home-marquee-inner py-[7vh] tab:py-[5vh] mob:py-[6vh] w-full flex justify-center flex-shrink-0 gap-[3vw] mob:gap-[6vw]">
             {
                 [...Array(3)].map((_, i) => {

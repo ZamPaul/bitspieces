@@ -5,8 +5,6 @@ import { transform } from "framer-motion";
 
 const Cursor = ({ scaleUpDiv, moveDiv, text }) => {
 
-  const [isHovered, setIsHovered] = useState(false);
-
   const cursorSize = 100;
   let maxDistance = 0;
   let prevMaxDistance = 0;
@@ -150,23 +148,23 @@ const Cursor = ({ scaleUpDiv, moveDiv, text }) => {
   }, []);
 
   useEffect(() => {
-    const section = document.querySelector(`${moveDiv}`);
-    section.addEventListener("mousemove", mouseMove);
-    section.addEventListener("mouseleave", mouseLeave);
+    // const section = document.querySelector(`${moveDiv}`);
+    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("mouseleave", mouseLeave);
 
     return () => {
-      section.removeEventListener("mousemove", mouseMove);
-      section.removeEventListener("mouseleave", mouseLeave);
+      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("mouseleave", mouseLeave);
     };
   },[]);
 
   return (
     <>
-    <div ref={cursorWrap} className="cursor-wrap fixed left-0 top-0 scale-0 pointer-events-none z-[10000]">
+    <div ref={cursorWrap} className="cursor-wrap tab:hidden mob:hidden fixed left-0 top-0 scale-0 pointer-events-none z-[10000]">
       <div ref={ref} className="cursor rounded-full w-[100px] h-[100px] bg-[#fff]">
       </div>
     </div>
-    <div ref={textRef} className="fixed-text pointer-events-none left-0 top-0 -translate-x-1/2 -translate-y-1/2 scale-0 fixed z-[11000]">
+    <div ref={textRef} className="fixed-text tab:hidden mob:hidden pointer-events-none left-0 top-0 -translate-x-1/2 -translate-y-1/2 scale-0 fixed z-[11000]">
       <h2 className="text-black text-[16px] select-none pointer-events-none">
         {text}
       </h2>

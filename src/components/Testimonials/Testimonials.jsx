@@ -4,6 +4,13 @@ import Slide from "./slide";
 import { motion } from "framer-motion";
 import Getdimensions from "../hooks/getdimensions";
 import Cursor from "../Cursor/cursor";
+import men1 from "../../../public/customers/men1.webp"
+import men2 from "../../../public/customers/men2.webp"
+import men3 from "../../../public/customers/men3.webp"
+import women1 from "../../../public/customers/women1.webp"
+import women2 from "../../../public/customers/women2.webp"
+import women3 from "../../../public/customers/women3.webp"
+import women4 from "../../../public/customers/women4.webp"
 
 const testimonials = [
   {
@@ -15,6 +22,7 @@ const testimonials = [
     flag: false,
     date: "April 12, 2023",
     serviceType: "Commercial Set Design",
+    img: men1,
   },
   {
     name: "Sarah Johnson",
@@ -25,6 +33,7 @@ const testimonials = [
     flag: true,
     date: "February 8, 2023",
     serviceType: "Event Management",
+    img: women1,
   },
   {
     name: "Emily Roberts",
@@ -35,6 +44,7 @@ const testimonials = [
     flag: true,
     date: "May 20, 2023",
     serviceType: "Advertising Department",
+    img: women2,
   },
   {
     name: "David Lee",
@@ -45,6 +55,7 @@ const testimonials = [
     flag: true,
     date: "July 15, 2023",
     serviceType: "Rental Equipment",
+    img: men2
   },
   {
     name: "Olivia Brown",
@@ -55,6 +66,7 @@ const testimonials = [
     flag: false,
     date: "March 28, 2023",
     serviceType: "Film Set Design",
+    img: women3
   },
   {
     name: "Michael Smith",
@@ -65,6 +77,7 @@ const testimonials = [
     flag: true,
     date: "June 10, 2023",
     serviceType: "Event Management",
+    img: men3
   },
   {
     name: "Laura Martinez",
@@ -75,6 +88,7 @@ const testimonials = [
     flag: false,
     date: "January 5, 2023",
     serviceType: "Advertising Department",
+    img: women4
   },
 ];
 
@@ -118,13 +132,14 @@ const Testimonials = () => {
             testimonials.map((slide, i) => {
               return (
                 <Slide
-                  flag={slide.flag}
+                  flag={false}
                   color={slide.color}
                   date={slide.date}
                   name={slide.name}
                   occupation={slide.occupation}
                   key={`Client_Review_Slide_${i}`}
                   review={slide.review}
+                  customerImg={slide.img}
                 />
               );
             })
@@ -139,9 +154,9 @@ const Testimonials = () => {
 
 const TopText = () => {
   return (
-    <div className="text-info w-[93%] mb-[7vh] tab:mb-[5vh] mob:mb-[5vh] flex flex-col justify-start pb-[5vh] tab:pb-[4.5vh] mob:pb-[3vh] border-b-[1px] border-b-[var(--bor)]">
-      <p className="text-[3.5vw] leading-none mob:leading-[1.4em] tab:text-[4vw] mob:text-[7vw]">
-        Hear from Our Satisfied Clients
+    <div className="text-info w-[93%] mb-[7vh] tab:mb-[5vh] mob:mb-[5vh] flex flex-col justify-start pb-[5vh] tab:pb-[4vh] mob:pb-[3vh] border-b-[1px] border-b-[var(--bor)]">
+      <p className="text-[2.6vw] font-[mon] uppercase tracking-[1px] leading-[1.3em] mob:leading-[1.4em] tab:text-[3.5vw] mob:text-[6vw]">
+        Hear from Our<br/>Satisfied Clients
       </p>
     </div>
   );

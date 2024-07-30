@@ -59,7 +59,7 @@ const Process = () => {
     <div className='process relative rounded-t-[15px] rounded-b-[20px] z-[30] w-full py-[20vh] tab:py-[10vh] mob:py-[13vh] mob:pt-[2vh] overflow-hidden bg-black flex justify-center'>
         <div className="process-inner w-[93%] flex flex-col gap-[7vh] tab:gap-[5vh] mob:gap-[5vh]">
             <div className="process-title flex justify-start pb-[5vh] tab:pb-[4.5vh] mob:pb-[4vh] border-b-[1px] border-b-[var(--bor)]">
-                <h1 className='text-[#fff] leading-[1.1em] tracking-[0px] text-[4vw] mob:text-[7vw]'>
+                <h1 className='text-[#fff] font-[mon] uppercase leading-[1.3em] tracking-[1px] text-[2.6vw] mob:text-[7vw]'>
                     Our Step-by-Step Approach
                 </h1>
             </div>
@@ -77,13 +77,12 @@ const Process = () => {
                         cursor:"grabbing"
                     }
                  }}
-                 className="slider-inner w-fit flex items-center justify-start gap-[4vw] mob:gap-[7vw] flex-shrink-0">
+                 className="slider-inner about-cursor-scale-up w-fit flex items-center justify-start gap-[4vw] mob:gap-[7vw] flex-shrink-0">
                     <Slider/>
                 </motion.div>
             </div>
         </div>
     </div>
-    <Cursor moveDiv={".process"} scaleUpDiv={".process-inner .slider-wrapper .slider-inner"} text={"Drag"}/>
     </>
   )
 }
@@ -106,24 +105,24 @@ const Slider = () => {
                         }
                      }}
                      transition={{type:"keyframes",ease:"linear"}}
-                     style={{backgroundColor:slide.bg}}
+                     style={{backgroundColor:"var(--sli)"}}
                      className="slide-inner relative overflow-hidden w-full h-full px-[45px] py-[45px] mob:px-[30px] rounded-[15px] flex flex-col justify-start gap-[3vw] tab:gap-[6vw] mob:gap-[10vw]">
 
                         <div className="back-svg absolute right-[-8vw] mob:right-[-25vw] bottom-[-8vw] mob:bottom-[-20vw] w-[30vw] tab:w-[35vw] mob:w-[100vw] h-[30vw] tab:h-[35vw] mob:h-[100vw]">
                             <Svg fill={slide.flag?"#12121230":"#ffffff10"} stroke={slide.flag?"#12121212":"#ffffff07"} px={"0.5px"}/>
                         </div>
                         <div className="title relative">
-                            <h2 className={`text-[17px] tab:text-[17px] uppercase tracking-[0.5px] font-[900] ${slide.flag ? "text-black": "text-[#fff]"}`}>
+                            <h2 className={`text-[17px] tab:text-[17px] uppercase tracking-[0.5px] font-[900] ${slide.flag ? "text-[#fff]": "text-[#fff]"}`}>
                                 {slide.title}
                             </h2>
                         </div>
                         <div className="description relative w-full pr-[15px] tab:pr-[5px] mob:pr-[0px]">
-                            <p className={`text-[1.6vw] tab:text-[2.4vw] mob:text-[25px] ${slide.flag ? "text-black": "text-[#fff]"}`}>
+                            <p className={`text-[1.6vw] tab:text-[2.4vw] mob:text-[25px] ${slide.flag ? "text-[#fff]": "text-[#fff]"}`}>
                                 {slide.desc}
                             </p>
                         </div>
                         <div className="phase absolute left-[45px] bottom-[45px]">
-                            <h2 className={`text-[18px] tab:text-[18px] ${slide.flag ? "text-[#121212]": "text-[#ffffff95]"}`}>
+                            <h2 className={`text-[18px] tab:text-[18px] ${slide.flag ? "text-[#ffffff95]": "text-[#ffffff95]"}`}>
                                 Phase {i+1}
                             </h2>
                         </div>

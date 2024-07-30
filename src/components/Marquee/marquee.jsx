@@ -3,6 +3,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
+import arrow from "../../../public/assets/arrow2.png"
+import Image from "next/image";
+import { useSpring, motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -18,11 +21,29 @@ const Marquee = () => {
   let direction = 1;
   let speed = 2;
 
+  // const rotate = useSpring(0,{stiffness:300,damping:30,mass:0.4})
+
   useEffect(() => {
     if (window.innerWidth <= 1024 && window.innerHeight <= 800) {
       speed = 1.5;
     }
   });
+
+  const turnArrow = (direction) => {
+    if(direction==1){
+      gsap.to(".marquee-arrow",{
+        rotate:`0deg`,
+        ease:"power1.out",
+        duration:.4,
+      })
+    }else{
+      gsap.to(".marquee-arrow",{
+        rotate:`-180deg`,
+        ease:"power1.out",
+        duration:.4,
+      })
+    }
+  }
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -39,10 +60,9 @@ const Marquee = () => {
         invalidateOnRefresh: true,
         scrub: true,
         // markers: true,
-        // animation:anim,
         onUpdate: (e) => {
           direction = e.direction;
-          // xMove = e.direction
+          turnArrow(e.direction)
         },
       });
     }
@@ -99,9 +119,15 @@ const Marquee = () => {
                       <h1 className="tracking-[0px] uppercase font-[mon] text-black text-[6.5vw] mob:text-[12vw]">
                         {elem}
                       </h1>
-                      <h1 className="tracking-[0px] uppercase font-[mon] text-black text-[6.5vw] mob:text-[12vw]">
+                      {/* <h1 className="tracking-[0px] uppercase font-[mon] text-black text-[6.5vw] mob:text-[12vw]">
                         -
-                      </h1>
+                      </h1> */}
+                      <div className="marquee-arrow">
+                        <Image
+                        src={arrow}
+                        className="w-[5vw] h-[5vw] object-cover"
+                        />
+                      </div>
                     </div>
                   );
                 })}

@@ -1,11 +1,18 @@
 import React from 'react'
 import Svg from '../svg/svg'
-import { motion } from 'framer-motion'
+import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion'
 import { Circle } from '../about/process'
+import Image from 'next/image'
+import quote from "../../../public/quote.png"
 
-const Slide = ({review, flag, color, name, occupation, key, date}) => {
+const Slide = ({review, flag, color, name, occupation, key, date, customerImg}) => {
+    
+  const quoteColor = useSpring("#fff")
+
   return (
-    <motion.div
+    <motion.div 
+     onMouseEnter={()=>{quoteColor.set("#ffd92f")}}
+     onMouseLeave={()=>{quoteColor.set("#fff")}}
      variants={{
         init:{
             scale: 1,
@@ -16,22 +23,23 @@ const Slide = ({review, flag, color, name, occupation, key, date}) => {
      }}
      transition={{type:"keyframes",ease:"linear"}}
      style={{
-        backgroundColor:color
+        backgroundColor:"var(--sli)",
      }}
      key={key} className='review-slide w-[32vw] tab:w-[45vw] mob:w-[93vw] h-[32vw] tab:h-[50vw] mob:h-[520px] px-[45px] py-[45px] mob:px-[30px] bg-[var(--sli)] relative overflow-hidden flex flex-col items-start justify-between flex-shrink-0 rounded-[15px]'>
-        <div className="date-project relative">
-            <h2 className={`${flag?"text-black":"text-[#fff]"} uppercase`}>
-                {date}
-            </h2>
+        <div className="client-photo pointer-events-none w-[60px] h-[60px] rounded-full overflow-hidden">
+            <Image 
+             src={customerImg}
+             className="object-cover w-full h-full"
+            />
         </div>
         <div className="review relative top-[-1vw]">
-            <p className={`${flag?"text-black":""} text-[1.6vw] tab:text-[2.4vw] mob:text-[24px]`}>
+            <p className={`${flag?"text-black":""} text-[1.5vw] tab:text-[2.3vw] mob:text-[24px]`}>
                 "{review}"
             </p>
         </div>
         <div className="client-details">
             <div className="client-name mb-[3px]">
-                <h2 className={`${flag?"text-black":""} font-[900] tracking-[0.5px] tab:text-[16px]`}>
+                <h2 className={`${flag?"text-black":""} font-[100] tracking-[0.5px] tab:text-[16px]`}>
                     {name}
                 </h2>
             </div>
@@ -41,9 +49,10 @@ const Slide = ({review, flag, color, name, occupation, key, date}) => {
                 </p>
             </div>
         </div>
-        <div className="back-svg absolute right-[-8vw] mob:right-[-25vw] bottom-[-8vw] mob:bottom-[-20vw] w-[30vw] tab:w-[35vw] mob:w-[100vw] h-[30vw] tab:h-[35vw] mob:h-[100vw]">
-            <Svg fill={flag?"#12121230":"#ffffff10"} stroke={flag?"#12121212":"#ffffff07"} px={"0.5px"}/>
-        </div>
+        <motion.div
+         style={{backgroundColor:quoteColor}}
+         className="review-slide-quote absolute pointer-events-none right-[30px] top-[40px] w-[5vw] tab:w-[6.5vw] mob:w-[13vw] h-[5vw] tab:h-[6.5vw] mob:h-[13vw]">
+        </motion.div>
     </motion.div>
   )
 }

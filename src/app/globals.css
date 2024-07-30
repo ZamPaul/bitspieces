@@ -38,6 +38,7 @@ html.lenis, html.lenis body {
     --pink:#e5d4e6;
     --green:#d2e5d8;
     --pp:#cac1e2;
+    --orange: #cd6736;
 }
 
 *{
@@ -349,9 +350,19 @@ main{
     width: calc(100% - 4vw);
 }
 
+.process-right-wrap .process-item:nth-child(1){ 
+    border-top: 1px solid var(--bor);
+}
+
+.process-right-wrap{
+    width: calc(100% - 4vw);
+}
 
 @media (max-width:1024px) and (min-height:1000px) {
     .services-right-wrap{
+        width: calc(100% - 6vw);
+    }
+    .process-right-wrap{
         width: calc(100% - 6vw);
     }
     .loader{
@@ -364,6 +375,9 @@ main{
 
 @media (max-width:576px) and (max-height:1000px) {
     .services-right-wrap{
+        width: calc(100% - 7vw);
+    }
+    .process-right-wrap{
         width: calc(100% - 7vw);
     }
     .footer-right .social-and-info .social-links{
@@ -393,10 +407,18 @@ main{
     top: calc(75% + 6.5vh);
 }
 
-@media screen and (max-width:800px) and (min-height:1000px) {
+@media screen and (max-width:820px) and (min-height:1000px) {
     .testimonial-slider-wrapper .review-slide{
         height: 55vw;
         width: 48vw;
+    }
+}
+
+/* resizing clients photo on tablets less than 900px */
+@media (max-width:900px) and (min-height:1000px) {
+    .testimonial-slider-wrapper .review-slide .client-photo{
+        height: 50px;
+        width: 50px;
     }
 }
 
@@ -408,10 +430,6 @@ main{
     background: radial-gradient(#272727, #181818);
 }
 
-.transition-slide{
-    /* background: radial-gradient(#ffd92f,rgb(235, 199, 38)); */
-}
-
 .whatsapp-button .circle .circle-overlay{
     mask-image: url(../../public/whatsapp.png);
     mask-size: 80%;
@@ -419,6 +437,29 @@ main{
     mask-position: center center;
 }
 
-.menu-wrapper{
-    /* background: radial-gradient(#ffd92f,rgb(235, 199, 38)); */
+.home-about-left-img{
+    background-color:var(--yellow);
+    /* background-color: #fff; */
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: 100% 100%;
+    mask-image: url(../../public/shape.png);
+    /* animation: imgColorChange 2s infinite alternate cubic-bezier(0.76, 0, 0.24, 1); */
 }
+
+.home-services-arrow .home-services-arrow-inner{
+    background-color:black;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: 100% 100%;
+    mask-image: url(../../public/assets/arrow2.png);
+}
+
+.review-slide-quote{
+    background-color:#e0fd60;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: 100% 100%;
+    mask-image: url(../../public/quote.png);
+}
+
