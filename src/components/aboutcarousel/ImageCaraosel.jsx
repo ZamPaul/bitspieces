@@ -204,15 +204,6 @@ const ImageCarousel = () => {
        }}
        className="carousel-inner about-cursor-scale-up overflow-hidden w-fit flex flex-shrink-0 justify-center items-center gap-[3vw] mob:gap-[6vw]">
         {imgs.map((elem, i) => {
-          let w = elem.width.desktop;
-          let h = elem.height.desktop;
-          if(window.innerWidth<=576){
-            w=elem.width.mob
-            h=elem.height.mob
-          }else if(window.innerWidth<=1024 && window.innerHeight>1000){
-            w=elem.width.tab
-            h=elem.height.tab
-          }
           return (
             <motion.div
              variants={{
@@ -226,8 +217,8 @@ const ImageCarousel = () => {
              transition={{type:"keyframes",ease:"linear"}}
 
              style={{
-                width:w,
-                height:h,
+                width:elem.width.desktop,
+                height:elem.height.desktop,
              }}
              key={i} className="carousel-item pointer-events-none select-none overflow-hidden rounded-[10px] flex flex-shrink-0">
               <Image
