@@ -392,19 +392,67 @@ main{
 }
 
 .bar .dot:nth-child(2){
-    top: calc(0% + 8.5vh);
+    top: calc(0% + 11vh);
 }
 
 .bar .dot:nth-child(3){
-    top: calc(25% + 6.5vh);
+    top: calc(20% + 12vh);
 }
 
 .bar .dot:nth-child(4){
-    top: calc(50% + 8.5vh);
+    top: calc(40% + 8.5vh);
 }
 
 .bar .dot:nth-child(5){
-    top: calc(75% + 6.5vh);
+    top: calc(60% + 9vh);
+}
+
+.bar .dot:nth-child(6){
+    top: calc(80% + 10vh);
+}
+
+@media (max-width:1024px) and (min-height:1000px) {
+    .bar .dot:nth-child(2){
+        top: calc(0% + 6vh);
+        /* background-color: #e0fd60; */
+    }
+    
+    .bar .dot:nth-child(3){
+        top: calc(20% + 5vh);
+    }
+    
+    .bar .dot:nth-child(4){
+        top: calc(40% + 4vh);
+    }
+    
+    .bar .dot:nth-child(5){
+        top: calc(60% + 4.5vh);
+    }
+    
+    .bar .dot:nth-child(6){
+        top: calc(80% + 5.1vh);
+    }
+}
+
+@media (max-width:576px){
+    .bar .dot:nth-child(2){
+        top: calc(0% + 9vh);
+    }
+    .bar .dot:nth-child(3){
+        top: calc(20% + 9vh);
+    }
+    
+    .bar .dot:nth-child(4){
+        top: calc(40% + 8vh);
+    }
+    
+    .bar .dot:nth-child(5){
+        top: calc(60% + 7.5vh);
+    }
+    
+    .bar .dot:nth-child(6){
+        top: calc(80% + 10vh);
+    }
 }
 
 @media screen and (max-width:820px) and (min-height:1000px) {
@@ -412,6 +460,10 @@ main{
         height: 55vw;
         width: 48vw;
     }
+    .process-title-wrap h2{
+        font-size: 3vw;
+    }
+
 }
 
 /* resizing clients photo on tablets less than 900px */
@@ -463,3 +515,10 @@ main{
     mask-image: url(../../public/quote.png);
 }
 
+.service-descriptions-wrap .service-description:nth-child(2){
+    position: relative;
+}
+
+.service-count-wrap .count:nth-child(1){
+    position: relative;
+}

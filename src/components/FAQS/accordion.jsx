@@ -60,7 +60,7 @@ const Accordion = forwardRef( ( {num, query, answer, key, img}, ref ) => {
 
         <motion.div className='overflow-hidden w-full flex mob:flex-col mob:gap-[0vw] justify-between items-start'>
 
-          <p className='w-full text-[#fffd] tab:w-full mt-[2vw] mob:mt-[6vw] mob:w-full text-left'>
+          <p className='w-full text-[#fffd] mob:text-[16px] tab:w-full mt-[2vw] mob:mt-[4.5vw] mob:w-full text-left'>
             {answer}
           </p>
 

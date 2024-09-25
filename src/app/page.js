@@ -9,6 +9,7 @@ import HomeServiceSection from '@/components/home/HomeServices'
 import HomeMarquee from '@/components/home/HomeMarquee'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import FAQS from '@/components/FAQS/FAQS'
+import ServiceSection from '@/components/Service/ServiceSection'
 
 const Page = () => {
 
@@ -17,7 +18,8 @@ const Page = () => {
     <Hero/>
     <HomeMarquee/>
     <HomeAboutSection/>
-    <HomeServiceSection/>
+    {/* <HomeServiceSection/> */}
+    <ServiceSection/>
     <Work/>
     <Testimonials/>
     <FAQS/>

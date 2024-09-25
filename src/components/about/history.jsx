@@ -28,8 +28,8 @@ const History = () => {
                     </h1>
                 </div>
             </Pin>
-            <div className="lower bg-black w-full relative flex mob:flex-col justify-between pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)]">
-                <div className="right w-2/3 mob:w-full flex flex-col gap-[3vh] mob:mt-[4vh]">
+            <div className="lower bg-black w-full relative flex mob:flex-col justify-between mob:items-start pt-[7vh] tab:pt-[5vh] mob:pt-[5vh] border-t-[1px] border-t-[var(--bor)] mob:gap-[8vw]">
+                <div className="right w-2/3 mob:w-full flex flex-col gap-[3vh] mob:mt-[0vh]">
                     {
                         paras.map((value, i) => {
                             return (
@@ -41,7 +41,7 @@ const History = () => {
                         })
                     }
                 </div>
-                <div className="about-buttons-wrapper flex flex-col items-end gap-[1vw]">
+                <div className="about-button flex flex-col items-end">
                     <Button href={"/work"} value={"Our Works"}/>
                 </div>
             </div>

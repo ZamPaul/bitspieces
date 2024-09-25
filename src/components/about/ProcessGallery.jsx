@@ -89,7 +89,7 @@ const ProcessGallery = () => {
         <motion.div style={{height}} className="bar-inner w-full bg-[#fff] rounded-[20px]">
         </motion.div>
         {
-          [...Array(4)].map((_, i)=>{
+          [...Array(5)].map((_, i)=>{
             return (
               <div
                key={`Bar_dot_services${i}`}

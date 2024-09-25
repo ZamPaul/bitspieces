@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header/header";
 import MenuOverlay from "@/components/menuOverlay/menuoverlay";
 import LoadContextProvider from "@/components/LoadContext/LoadContext";
+import SessionWrapper from "@/components/SessionWrapper/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true} suppressContentEditableWarning>
       <body className={inter.className}>
-        <LoadContextProvider>
-          {children}
-          <MenuOverlay/>
-          <Header/>
-        </LoadContextProvider>
+        <SessionWrapper>
+          <LoadContextProvider>
+            {children}
+            <MenuOverlay/>
+            <Header/>
+          </LoadContextProvider>
+        </SessionWrapper>
       </body>
     </html>
   );

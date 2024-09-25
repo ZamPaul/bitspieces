@@ -5,12 +5,19 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { m, motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
+import ad from "../../../public/services/ad.webp"
+import art from "../../../public/services/art.webp"
+import event from "../../../public/services/event.webp"
+import rental from "../../../public/services/rental.webp"
 
-const services = [
+export const services = [
   {
     name:"Art department",
+    textElement:  <h2 className="text-[2.6vw] tab:text-[3.5vw] uppercase tracking-[0px]">
+                      Art Department
+                  </h2>,
     src:"./assets/art/art1.webp",
+    img:art,
     extras:["Commercial Set Design","Props Fabrication","Film Set Design","Stage Design","Video Set Design","Scenic Design","Documentaries Set"],
     p:"Our Art Department provides commercial set design, props fabrication, film and stage design, video and scenic design, and documentary set design. We create visually stunning and immersive environments tailored to your specific needs",
     text:"Projects",
@@ -18,6 +25,10 @@ const services = [
   },
   {
       name:"Event & Artist Management",
+      textElement:  <h2 className="text-[2.6vw] tab:text-[3.5vw] uppercase tracking-[0px]">
+                      Event Management
+                  </h2>,
+      img:event,
       src:"./assets/event/event1.webp",
       extras:["Conference","Birthday party","Wedding","Entertainment & Artist Management","Gift souvenir supply","Product launches","Trade shows","Entertainers promoters"],
       p:"Our Event & Artist Management services include conferences, birthday parties, weddings, gift souvenirs, product launches, trade shows, and entertainer promoters. We ensure seamless execution and talent coordination, making every occasion memorable",
@@ -26,6 +37,10 @@ const services = [
   },
   {
       name:"Advertising department",
+      img:ad,
+      textElement:  <h2 className="text-[2.6vw] tab:text-[3.5vw] uppercase tracking-[0px]">
+                      Advertisement
+                  </h2>,
       src:"./assets/ad/ad1.webp",
       extras:["Outdoor printing","Indoor printing","Offset printing","Signages Design"],
       p:"Our Advertising Department specializes in outdoor and indoor printing, offset printing, and signage design. We craft impactful campaigns using innovative strategies and dynamic designs to captivate and engage your audience.",
@@ -34,6 +49,10 @@ const services = [
   },
   {
       name:"Rental Equipments",
+      img:rental,
+      textElement:  <h2 className="text-[2.6vw] tab:text-[3.5vw] uppercase tracking-[0px]">
+                      Rental Equipments
+                  </h2>,
       src:"./rentals/vintgeprops.webp",
       extras:["Event furniture","Sport and Games","Kids Party Equipments","Kitchen and crockery","Vintage props","Arabic items","Tents and lighting","SFX machine","Musical instruments"],
       p:"Discover our extensive rental equipment range, including event furniture, sports and games, kids party equipment, kitchen and crockery, vintage props, Arabic items, tents and lighting, SFX machines, and musical instruments. We provide high-quality solutions for any occasion",
