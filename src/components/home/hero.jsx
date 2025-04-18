@@ -22,7 +22,7 @@ const Hero = () => {
                         </h1>
                         <div className="services flex text-left tab:hidden mob:hidden">
                             <p className='text-[17px] text-[#ffffffd0]'>
-                                Art department, advertising,<br/>Film Making, Event Management,<br/>rentals and much more.
+                                Art department, advertising,<br/>Film Making, Event Managements,<br/>rentals and much more.
                             </p>
                         </div>
                         <div className='tab:ml-[3vw] mob:hidden'>
