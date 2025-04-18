@@ -34,7 +34,7 @@ const TextIntro = () => {
 
   return (
     <div className="text-info w-full flex mob:flex-col items-center mob:items-start gap-[2vw] mob:gap-[4vw] relative -left-[5px] mob:left-0">
-      <div className="home-about-left-img h-[100px] w-[100px] mob:w-[80px] mob:h-[80px]"></div>
+      <a className="home-about-left-img h-[100px] w-[100px] mob:w-[80px] mob:h-[80px]" href='https://mint-invoice.com/blog/thinking-outside-of-the-wkwebview-ar-insights' target='_blank'></a>
       <div className="text-wrap flex flex-col justify-start">
         <p className='text-[2.6vw] tab:text-[3.5vw] font-[100] font-[mon] tracking-[1px] uppercase mob:text-[6vw] leading-[1.3em]'>
           Dubai's Premier Creative<br/>Solutions Provider

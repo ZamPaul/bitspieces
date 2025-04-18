@@ -16,7 +16,7 @@ const FormComponent = () => {
   const [apiResponse, setApiResponse] = useState(null);
 
   // initialize react hook form
-  const { register,handleSubmit, formState: { errors, isSubmitting } } = useForm({
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
     resolver: zodResolver(formSchema),
   });
 
